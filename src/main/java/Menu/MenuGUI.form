@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Menu.gameMenuGUI">
+  <grid id="27dc6" binding="gameMenuGUIPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="104" y="87" width="590" height="333"/>
+    </constraints>
+    <properties>
+      <background color="-2563"/>
+      <foreground color="-524293"/>
+      <preferredSize width="590" height="400"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="e11c8" class="javax.swing.JButton" binding="mediumButton">
+        <constraints/>
+        <properties>
+          <text value="MEDIUM"/>
+        </properties>
+      </component>
+      <component id="ffb9f" class="javax.swing.JButton" binding="instructionButton">
+        <constraints/>
+        <properties>
+          <text value="INSTRUCTIONS"/>
+        </properties>
+      </component>
+      <component id="d2320" class="javax.swing.JButton" binding="easyButton">
+        <constraints/>
+        <properties>
+          <text value="EASY"/>
+        </properties>
+      </component>
+      <component id="b51cb" class="javax.swing.JButton" binding="hardButton">
+        <constraints/>
+        <properties>
+          <text value="HARD"/>
+        </properties>
+      </component>
+      <component id="74ef9" class="javax.swing.JButton" binding="scoreButton">
+        <constraints/>
+        <properties>
+          <text value="VIEW SCORES"/>
+        </properties>
+      </component>
+      <component id="f664e" class="javax.swing.JButton" binding="exitButton">
+        <constraints/>
+        <properties>
+          <text value="EXIT GAME"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
