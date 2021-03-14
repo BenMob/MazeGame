@@ -75,3 +75,6 @@ target/
 
 # All .class files
 .class
+# Intellij
+.idea/
+*.iml
