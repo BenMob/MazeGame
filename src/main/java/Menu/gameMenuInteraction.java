@@ -22,8 +22,8 @@ public class gameMenuInteraction extends gameMenuLogic{
 abstract class gameMenuLogic extends MapSelector{
     void instructionAction() {new Display_Files("INSTRUCTIONS");}
     void easyModeAction() { setMAP("EASY"); new mazeMapsController(); new StartTimer(50, "GAME");}
-    void mediumModeAction() {setMAP("MEDIUM");new StartTimer(50, "GAME");}
-    void hardModeAction() {setMAP("HARD");new StartTimer(50, "GAME");}
+    void mediumModeAction() {setMAP("MEDIUM"); new mazeMapsController(); new StartTimer(50, "GAME"); System.out.println("Rannnnn 1");}
+    void hardModeAction() {setMAP("HARD");new mazeMapsController(); new StartTimer(50, "GAME");}
     void viewScoreAction() {new Display_Files("DATA");}
     void exitGameAction() {System.out.println("EXITING GAME"); System.exit(0);}
 }
