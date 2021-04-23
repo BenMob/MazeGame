@@ -22,7 +22,7 @@ public class Player extends PlayerDetails{ //extends a movement clas only if is 
     public String getScore(){return super.SCORE;}
 /*
     public static void main(String[] args){
-        Player player = new Player();
+        version0.Player player = new version0.Player();
         player.inputtedName("JEDD ONG");
         player.selectedGameMode("EASY");
         player.mazeResults(69.69);
