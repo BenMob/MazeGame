@@ -1,0 +1,3 @@
+This package should contain two sub packages and one java file,
+one sub package for Listener Interfaces and another for Listener classes.
+The java file at the root will be the ListenerMediator.java file.

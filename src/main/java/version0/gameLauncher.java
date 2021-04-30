@@ -1,3 +1,5 @@
+package version0;
+
 import Menu.gameMenuGUI;
 import Menu.userDialog;
 

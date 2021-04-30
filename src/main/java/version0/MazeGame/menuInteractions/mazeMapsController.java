@@ -14,7 +14,7 @@ public class mazeMapsController extends JFrame{
       public mazeMapsController(){
           mazeMapGenerator maps = new mazeMapGenerator();
           add(maps);
-          setTitle("MazeGame.menuInteractions.Player Control Illustration inside a JPanel");
+          setTitle("MazeGame.menuInteractions.version0.Player Control Illustration inside a JPanel");
           setVisible(true);
           setResizable(false);
           setSize(maps.jframeWidth, maps.jframeHeight);
