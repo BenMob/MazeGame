@@ -18,10 +18,10 @@ public abstract class AbstractScreen extends JPanel {
     /**
      * Is implemented by the child class in order to build the header of the screen
      */
-    public abstract void buildHeader();
+    protected abstract void buildHeader();
 
     /**
      * Is implemented by the child class in order to build the body of the screen
      */
-    public abstract void buildBody();
+    protected abstract void buildBody();
 }
