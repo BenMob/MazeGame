@@ -4,8 +4,7 @@ import version1.gameUtil.data.collections.PlayerRecord;
 import version1.gameUtil.data.models.RecordList;
 
 import java.util.Map;
-
-//** How to implement JSON simple file and recordAsHashMap obj
+// How to implement JSON simple file and recordAsHashMap obj
 public class DataStore implements DataStore_IF{
 
     private RecordList recordsAsList; //RecordList object
