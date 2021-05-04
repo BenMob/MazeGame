@@ -9,7 +9,7 @@ public class DataStore implements DataStore_IF{
 
     private RecordList recordsAsList; //RecordList object
 
-    DataStore dbInstance; //singleton
+    DataStore dbInstance; //singleton obj
 
     private Map<String,PlayerRecord> recordsAsHashMap;
 
@@ -47,6 +47,12 @@ public class DataStore implements DataStore_IF{
         }
         return false;
     }
+
+    /**
+     *
+     * ** Implemented methods below **
+     */
+
 
     @Override
     public boolean login(String username) {
