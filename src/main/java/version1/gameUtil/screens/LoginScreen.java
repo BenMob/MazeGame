@@ -1,7 +1,10 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToRegistrationBListener;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
+import version1.gameUtil.widgets.buttons.MazeLoginButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -123,11 +126,12 @@ public class LoginScreen extends AbstractScreen{
         return this;
     }
 
+    /**
+     * Creates an action listener for registration screen button
+     */
     public LoginScreen setGoToRegistrationScreenButton(String goToRegistrationScreenButtonText) {
-        this.goToRegistrationScreenButton = new JButton(goToRegistrationScreenButtonText);
+        this.goToRegistrationScreenButton = new MazeButton(goToRegistrationScreenButtonText, new GoToRegistrationBListener(gameFrame));
 
-        // Testing gotTo() Method TODO: Remove this line once the Listneres have been implemented
-        this.goToRegistrationScreenButton.addActionListener(e -> gameFrame.goTo(new RegistrationScreen(gameFrame)));
         return this;
     }
 
