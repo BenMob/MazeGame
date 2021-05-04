@@ -9,7 +9,7 @@ public class DataStore implements DataStore_IF{
 
     private RecordList recordsAsList; //RecordList object
 
-    DataStore dbInstance; //singleton obj
+    private DataStore dbInstance; //singleton obj
 
     private Map<String,PlayerRecord> recordsAsHashMap;
 
