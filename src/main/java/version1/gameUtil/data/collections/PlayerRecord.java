@@ -1,14 +1,19 @@
 package version1.gameUtil.data.collections;
 
+import version1.gameUtil.settings.GameMode;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerRecord extends AbstractRecord{
     private int id;
     private String username;
-    private String mode; // will be changed to a mode object after mode class is created
-    private Map<String, Integer> highestScores;
+    private Map<GameMode, Integer> highestScores;
 
+    public PlayerRecord()
+    {
+        this.highestScores = new HashMap<>();
+    }
     public int getId() {
         return id;
     }
@@ -25,13 +30,18 @@ public class PlayerRecord extends AbstractRecord{
         this.username = username;
     }
 
-    public Map<String, Integer> getHighestScores() {
+    public Map<GameMode,Integer> getHighestScores() {
         return highestScores;
     }
-//**Once Mode class is pulled I will put a mode obj into parameter **
-    public Map<String, Integer> setHighestScores() {
-        this.highestScores = highestScores;
-        return highestScores;
+
+    /**
+     *
+     * @param score
+     * @param mode
+     * Updates highest score with the given game mode and new score
+     */
+    public void setHighestScore(int score, GameMode mode) {
+        this.highestScores.put(mode,score);
     }
 
 }
