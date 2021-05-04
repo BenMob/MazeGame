@@ -23,4 +23,13 @@ public class ModeScreen extends AbstractScreen{
     public void buildBody() {
 
     }
+
+    /**
+     * Checks if all the attributes have been initalized correctly
+     * if not it throws an error
+     */
+    @Override
+    public void ready() {
+
+    }
 }

@@ -8,9 +8,6 @@ import java.awt.*;
 
 public class RegistrationScreen extends AbstractScreen{
 
-    // Is true when if all the attributes have been configured successfully
-    boolean isConfigured;
-
     // The label of the header of the screen
     private JLabel headerLabel;
 
@@ -29,9 +26,6 @@ public class RegistrationScreen extends AbstractScreen{
 
     // Username input text field TODO: Replace with customized textfield from widgets
     private JTextField userNameInputTextfield;
-
-    // The GameFrame | Read Only
-    private GameFrame gameFrame;
 
     public RegistrationScreen(GameFrame gameFrame){
 
@@ -139,32 +133,24 @@ public class RegistrationScreen extends AbstractScreen{
     }
 
     /**
-     * Sets the background color of the parent GameFrame
-     * @param color : color Object
-     */
-    public RegistrationScreen setGameFrameBackgroundColor(Color color){
-        this.gameFrame.setBackgroundColor(color);
-        return this;
-    }
-
-    /**
      * Checks if all the UI components (i.e attributes) have been properly
      * configured by the UIConfigurations.configure() method.
      *
      * This guarantees that the buildHeader() buildBody() will work with
      * non null objects.
      */
+    @Override
     public void ready(){
         /*
             TODO: Create Exception Handling classes to avoid hardcoding stiff like this
             Low priority at the moment
          */
-        final String headerLabelErrorMsg = "LoginScreen.headerLabel cannot be null";
-        final String iconErrorMsg = "LoginScreen.icon cannot be null";
-        final String loginButtonErrorMsg = "LoginScreen.loginButton cannot be null";
-        final String goToRegistrationScreenButtonErrorMsg = "LoginScreen.goToRegistrationScreenButton cannot be null";
-        final String userNameInputFieldLabelErrorMsg = "LoginScreen.userNameInputFieldLabel cannot be null";
-        final String userNameInputTextfieldErrorMsg = "LoginScreen.userNameInputTextfield cannot be null";
+        final String headerLabelErrorMsg = "RegistrationScreen.headerLabel cannot be null";
+        final String iconErrorMsg = "RegistrationScreen.icon cannot be null";
+        final String loginButtonErrorMsg = "RegistrationScreen.loginButton cannot be null";
+        final String goToRegistrationScreenButtonErrorMsg = "RegistrationScreen.goToRegistrationScreenButton cannot be null";
+        final String userNameInputFieldLabelErrorMsg = "RegistrationScreen.userNameInputFieldLabel cannot be null";
+        final String userNameInputTextfieldErrorMsg = "RegistrationScreen.userNameInputTextfield cannot be null";
 
         try{
             if(this.headerLabel == null) {

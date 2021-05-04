@@ -1,11 +1,19 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.settings.UIConfigurations;
+
+import javax.swing.*;
 
 public class MenuScreen extends AbstractScreen{
+    private JLabel header;
+    private JButton playButton;
+    private JButton leaderBoardButton;
+    private JButton quitButton;
 
     public MenuScreen(GameFrame gameFrame){
-        // Init stuff
+        this.gameFrame = gameFrame;
+        UIConfigurations.configure(this);
     }
 
     /**
@@ -21,6 +29,15 @@ public class MenuScreen extends AbstractScreen{
      */
     @Override
     public void buildBody() {
+
+    }
+
+    /**
+     * Checks if all the attributes have been initalized correctly
+     * if not it throws an error
+     */
+    @Override
+    public void ready() {
 
     }
 }

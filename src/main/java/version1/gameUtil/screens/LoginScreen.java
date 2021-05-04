@@ -11,9 +11,6 @@ import java.awt.*;
  */
 public class LoginScreen extends AbstractScreen{
 
-    // Is true when if all the attributes have been configured successfully
-    boolean isConfigured;
-
     // The label of the header of the screen
     private JLabel headerLabel;
 
@@ -32,9 +29,6 @@ public class LoginScreen extends AbstractScreen{
 
     // Username input text field TODO: Replace with customized textfield from widgets
     private JTextField userNameInputTextfield;
-
-    // The GameFrame | Read Only
-    private GameFrame gameFrame;
 
     public LoginScreen(GameFrame gameFrame){
 
@@ -144,21 +138,13 @@ public class LoginScreen extends AbstractScreen{
     }
 
     /**
-     * Sets the background color of the parent GameFrame
-     * @param color : color Object
-     */
-    public LoginScreen setGameFrameBackgroundColor(Color color){
-        this.gameFrame.setBackgroundColor(color);
-        return this;
-    }
-
-    /**
      * Checks if all the UI components (i.e attributes) have been properly
      * configured by the UIConfigurations.configure() method.
      *
      * This guarantees that the buildHeader() buildBody() will work with
      * non null objects.
      */
+    @Override
     public void ready(){
         /*
             TODO: Create Exception Handling classes to avoid hardcoding stiff like this

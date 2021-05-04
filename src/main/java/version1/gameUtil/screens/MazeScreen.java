@@ -70,4 +70,13 @@ public class MazeScreen extends AbstractScreen implements KeyListener {
     public void buildBody() {
 
     }
+
+    /**
+     * Checks if all the attributes have been initalized correctly
+     * if not it throws an error
+     */
+    @Override
+    public void ready() {
+
+    }
 }

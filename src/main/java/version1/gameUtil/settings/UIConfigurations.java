@@ -3,6 +3,7 @@ package version1.gameUtil.settings;
 import version1.gameUtil.GameFrame;
 import version1.gameUtil.screens.AbstractScreen;
 import version1.gameUtil.screens.LoginScreen;
+import version1.gameUtil.screens.MenuScreen;
 import version1.gameUtil.screens.RegistrationScreen;
 
 import javax.swing.*;
@@ -16,6 +17,8 @@ import java.awt.*;
  */
 public class UIConfigurations {
 
+    private static final Font headerLabelTextFont = new Font("Bold",Font.BOLD, 20);
+
     /**
      * UI Configurations for the Grame Frame
      * @param gameFrame The MainFrame
@@ -23,10 +26,10 @@ public class UIConfigurations {
     public static void configure(GameFrame gameFrame){
 
         // Min Width of the GameFrame
-        final int minFrameWidth = 700;
+        final int minFrameWidth = 800;
 
         // Min Height of the GameFrame
-        final int minFrameHeight = 450;
+        final int minFrameHeight = 550;
 
         // Min Dimension of the GameFrame
         final  Dimension minDimension = new Dimension(minFrameWidth, minFrameHeight);
@@ -81,7 +84,6 @@ public class UIConfigurations {
     public static void configure(LoginScreen loginScreen){
         final ImageIcon icon = new ImageIcon("amongus.png");
         final String headerLabelText = "MAZE GAME";
-        final Font headerLabelTextFont = new Font("Bold",20, 20);
         final Color headerLabelForeground = Color.WHITE;
         final String loginButtonLabelText = "Log In";
         final String gotToRegisterButtonLabelText = "New User";
@@ -111,7 +113,6 @@ public class UIConfigurations {
     public static void configure(RegistrationScreen registrationScreen){
         final ImageIcon icon = new ImageIcon("amongus.png");
         final String headerLabelText = "NEW ACCOUNT";
-        final Font headerLabelTextFont = new Font("Bold",20, 20);
         final Color headerLabelForeground = Color.WHITE;
         final String registerButtonLabelText = "Register";
         final String gotToLoginButtonLabelText = "Back to Login";
@@ -131,5 +132,18 @@ public class UIConfigurations {
                 .setUserNameInputFieldMaxLength(MAX_LENGTH)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
+    }
+
+    /**
+     * UI Configurations for the MenuScreen
+     * @param menuScreen loginScreen
+     */
+    public static void configure(MenuScreen menuScreen){
+        final String playButtonText = "Play";
+        final String leaderBoardButtonText = "LeaderBoard";
+        final String quitButtonText = "Quit";
+
+
+
     }
 }
