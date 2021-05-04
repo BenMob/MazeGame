@@ -3,7 +3,7 @@ package version1.gameUtil.data.models;
 import version1.gameUtil.data.collections.AbstractRecord;
 
 public class RecordIterator implements RecordIterator_IF{
-    RecordList list;
+    private RecordList list;
     @Override
     public boolean hasNext() {
         return false;
