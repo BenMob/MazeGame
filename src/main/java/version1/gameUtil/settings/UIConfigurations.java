@@ -156,12 +156,25 @@ public class UIConfigurations {
      * @param  modeScreen ins instace of a MazeScreen
      */
     public static void configure(ModeScreen modeScreen){
-        final String headerLabelText = "MENU";
+        final String headerLabelText = "PICK MODE";
         final Color headerLabelForeground = Color.WHITE;
-        final String playButtonText = "Play";
-        final String leaderBoardButtonText = "LeaderBoard";
-        final String quitButtonText = "Quit";
+        final String easyButtonText = "Easy";
+        final String mediumButtonText = "Medium";
+        final String hardButtonText = "Hard";
+        final String goToMenuText = "Cancel";
         final Color gameFrameBGColor = new Color(30, 49, 120);
+
+        /*
+         * Setting values property
+         */
+        modeScreen.setLayout(new BorderLayout());
+        modeScreen.createEasyButton(easyButtonText)
+                .createMediumButton(mediumButtonText)
+                .createHardButton(hardButtonText)
+                .createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont ,headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
     }
 
     /**

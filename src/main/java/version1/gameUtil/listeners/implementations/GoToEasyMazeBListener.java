@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 
 public class GoToEasyMazeBListener implements MazeActionListenerIF {
     private GameFrame gameFrame;
+
     @Override
     public void handleEvent() {
 

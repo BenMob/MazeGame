@@ -114,6 +114,7 @@ public class MenuScreen extends AbstractScreen{
      */
     public MenuScreen createPlayButton(String label) {
         this.playButton = new JButton(label);
+        this.playButton.addActionListener(e -> this.gameFrame.goTo(new ModeScreen(gameFrame)));
         return this;
     }
 
