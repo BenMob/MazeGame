@@ -48,8 +48,17 @@ public class LoginScreen extends AbstractScreen{
      */
     @Override
     public void buildHeader() {
-        JPanel headerContainer = new JPanel();
-        Color headerContainerColor = new Color(153, 0, 153);
+
+        /*
+         * First things first: sets the layout manager of the GameFrame
+         */
+        this.gameFrame.setLayout(new GridBagLayout());
+
+        /*
+         * Build the header container
+         */
+        final JPanel headerContainer = new JPanel();
+        final Color headerContainerColor = new Color(153, 0, 153);
         headerContainer.setLayout(new FlowLayout());
         headerContainer.setBackground(headerContainerColor);
         headerContainer.add(headerLabel);
@@ -112,8 +121,10 @@ public class LoginScreen extends AbstractScreen{
         return this;
     }
 
-    public LoginScreen setLoginButton(String loginButtonText) {
+    public LoginScreen setLoginButtonText(String loginButtonText) {
         this.loginButton = new JButton(loginButtonText);
+        this.loginButton.addActionListener(e -> gameFrame.goTo(new MenuScreen(gameFrame)));
+
         return this;
     }
 
