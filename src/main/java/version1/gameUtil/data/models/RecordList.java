@@ -7,7 +7,12 @@ import java.util.ArrayList;
 
 public class RecordList extends AbstractRecordList {
 
-    ArrayList<PlayerRecord> playerRecordList;
+    ArrayList<AbstractRecord> playerRecordList;
+
+    public RecordList()
+    {
+        this.playerRecordList = new ArrayList<>();
+    }
 
     public RecordIterator_IF createIterator()
     {
@@ -22,4 +27,8 @@ public class RecordList extends AbstractRecordList {
         return null;
     }
 
+    public void addItem(AbstractRecord record)
+    {
+
+    }
 }
