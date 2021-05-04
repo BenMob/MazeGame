@@ -58,7 +58,6 @@ public abstract class AbstractScreen extends JPanel {
      */
     public AbstractScreen setGameFrameBackgroundColor(Color color){
         this.gameFrame.setBackgroundColor(color);
-        System.out.println("Ran");
         return this;
     }
 }

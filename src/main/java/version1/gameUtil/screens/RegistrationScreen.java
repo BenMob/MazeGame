@@ -45,6 +45,16 @@ public class RegistrationScreen extends AbstractScreen{
      */
     @Override
     public void buildHeader() {
+
+        /*
+         * First things first: sets the layout manager of the GameFrame
+         */
+        this.gameFrame.setLayout(new GridBagLayout());
+
+
+        /*
+         * Build the header container
+         */
         final JPanel headerContainer = new JPanel();
         final Color  headerContainerColor = new Color(34,0,85);
         headerContainer.setLayout(new FlowLayout());
@@ -109,12 +119,12 @@ public class RegistrationScreen extends AbstractScreen{
         return this;
     }
 
-    public RegistrationScreen setRegisterButton(String registerButtonText) {
+    public RegistrationScreen setRegisterButtonText(String registerButtonText) {
         this.registerButton = new JButton(registerButtonText);
         return this;
     }
 
-    public RegistrationScreen setGoToLoginScreenButton(String goToLoginScreenButtonText) {
+    public RegistrationScreen setGoToLoginScreenButtonText(String goToLoginScreenButtonText) {
         this.goToLoginScreenButton = new JButton(goToLoginScreenButtonText);
 
         // Testing goTo()
