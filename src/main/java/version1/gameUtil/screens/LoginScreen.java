@@ -11,9 +11,6 @@ import java.awt.*;
  */
 public class LoginScreen extends AbstractScreen{
 
-    // Is true when if all the attributes have been configured successfully
-    boolean isConfigured;
-
     // The label of the header of the screen
     private JLabel headerLabel;
 
@@ -33,9 +30,6 @@ public class LoginScreen extends AbstractScreen{
     // Username input text field TODO: Replace with customized textfield from widgets
     private JTextField userNameInputTextfield;
 
-    // The GameFrame | Read Only
-    private GameFrame gameFrame;
-
     public LoginScreen(GameFrame gameFrame){
 
         // Sets the parent frame to be gameFrame
@@ -54,8 +48,17 @@ public class LoginScreen extends AbstractScreen{
      */
     @Override
     public void buildHeader() {
-        JPanel headerContainer = new JPanel();
-        Color headerContainerColor = new Color(153, 0, 153);
+
+        /*
+         * First things first: sets the layout manager of the GameFrame
+         */
+        this.gameFrame.setLayout(new GridBagLayout());
+
+        /*
+         * Build the header container
+         */
+        final JPanel headerContainer = new JPanel();
+        final Color headerContainerColor = new Color(153, 0, 153);
         headerContainer.setLayout(new FlowLayout());
         headerContainer.setBackground(headerContainerColor);
         headerContainer.add(headerLabel);
@@ -118,8 +121,10 @@ public class LoginScreen extends AbstractScreen{
         return this;
     }
 
-    public LoginScreen setLoginButton(String loginButtonText) {
+    public LoginScreen setLoginButtonText(String loginButtonText) {
         this.loginButton = new JButton(loginButtonText);
+        this.loginButton.addActionListener(e -> gameFrame.goTo(new MenuScreen(gameFrame)));
+
         return this;
     }
 
@@ -144,21 +149,13 @@ public class LoginScreen extends AbstractScreen{
     }
 
     /**
-     * Sets the background color of the parent GameFrame
-     * @param color : color Object
-     */
-    public LoginScreen setGameFrameBackgroundColor(Color color){
-        this.gameFrame.setBackgroundColor(color);
-        return this;
-    }
-
-    /**
      * Checks if all the UI components (i.e attributes) have been properly
      * configured by the UIConfigurations.configure() method.
      *
      * This guarantees that the buildHeader() buildBody() will work with
      * non null objects.
      */
+    @Override
     public void ready(){
         /*
             TODO: Create Exception Handling classes to avoid hardcoding stiff like this

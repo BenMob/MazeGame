@@ -1,9 +1,7 @@
 package version1.gameUtil.settings;
 
 import version1.gameUtil.GameFrame;
-import version1.gameUtil.screens.AbstractScreen;
-import version1.gameUtil.screens.LoginScreen;
-import version1.gameUtil.screens.RegistrationScreen;
+import version1.gameUtil.screens.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +14,8 @@ import java.awt.*;
  */
 public class UIConfigurations {
 
+    private static final Font headerLabelTextFont = new Font("Bold",Font.BOLD, 30);
+
     /**
      * UI Configurations for the Grame Frame
      * @param gameFrame The MainFrame
@@ -26,7 +26,7 @@ public class UIConfigurations {
         final int minFrameWidth = 700;
 
         // Min Height of the GameFrame
-        final int minFrameHeight = 450;
+        final int minFrameHeight = 500;
 
         // Min Dimension of the GameFrame
         final  Dimension minDimension = new Dimension(minFrameWidth, minFrameHeight);
@@ -49,10 +49,7 @@ public class UIConfigurations {
         final String title = "Maze Game";
 
         // Determines whether the frame should be resizable
-        final boolean isResizable = true;
-
-        // Jframe layout manager
-        final LayoutManager layout = new GridBagLayout();
+        final boolean isResizable = false;
 
         // Starting Screen by default
         final AbstractScreen firstScreen = new LoginScreen(gameFrame);
@@ -69,7 +66,6 @@ public class UIConfigurations {
         gameFrame.setMinimumSize(minDimension);
         gameFrame.setLocationRelativeTo(null);
         gameFrame.setResizable(isResizable);
-        gameFrame.setLayout(layout);
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -81,13 +77,12 @@ public class UIConfigurations {
     public static void configure(LoginScreen loginScreen){
         final ImageIcon icon = new ImageIcon("amongus.png");
         final String headerLabelText = "MAZE GAME";
-        final Font headerLabelTextFont = new Font("Bold",20, 20);
         final Color headerLabelForeground = Color.WHITE;
         final String loginButtonLabelText = "Log In";
         final String gotToRegisterButtonLabelText = "New User";
         final String inputBoxLabelText = "ENTER USERNAME:";
         final int MAX_LENGTH = 20;
-        final Color gameFrameBGColor = new Color(34,0,85);
+        final Color gameFrameBGColor = new Color(30, 49, 120);
 
         /*
          * Setting value properties
@@ -95,7 +90,7 @@ public class UIConfigurations {
         loginScreen.setLayout(new BorderLayout());
         loginScreen.setIcon(icon)
                 .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
-                .setLoginButton(loginButtonLabelText)
+                .setLoginButtonText(loginButtonLabelText)
                 .setGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
                 .setUserNameInputFieldLabel(inputBoxLabelText)
                 .setUserNameInputFieldMaxLength(MAX_LENGTH)
@@ -111,7 +106,6 @@ public class UIConfigurations {
     public static void configure(RegistrationScreen registrationScreen){
         final ImageIcon icon = new ImageIcon("amongus.png");
         final String headerLabelText = "NEW ACCOUNT";
-        final Font headerLabelTextFont = new Font("Bold",20, 20);
         final Color headerLabelForeground = Color.WHITE;
         final String registerButtonLabelText = "Register";
         final String gotToLoginButtonLabelText = "Back to Login";
@@ -124,12 +118,53 @@ public class UIConfigurations {
          */
         registrationScreen.setLayout(new BorderLayout());
         registrationScreen.setIcon(icon)
-                .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
-                .setRegisterButton(registerButtonLabelText)
-                .setGoToLoginScreenButton(gotToLoginButtonLabelText)
+                .setRegisterButtonText(registerButtonLabelText)
+                .setGoToLoginScreenButtonText(gotToLoginButtonLabelText)
                 .setUserNameInputFieldLabel(inputBoxLabelText)
                 .setUserNameInputFieldMaxLength(MAX_LENGTH)
+                .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
+    }
+
+    /**
+     * UI Configurations for the MenuScreen
+     * @param menuScreen loginScreen
+     */
+    public static void configure(MenuScreen menuScreen){
+        final String headerLabelText = "MENU";
+        final Color headerLabelForeground = Color.WHITE;
+        final String playButtonText = "Play";
+        final String leaderBoardButtonText = "LeaderBoard";
+        final String quitButtonText = "Quit";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
+
+
+        /*
+         * Setting value properties
+         */
+        menuScreen.setLayout(new BorderLayout());
+        menuScreen.setPlayButtonText(playButtonText)
+                .setLeaderBoardButton(leaderBoardButtonText)
+                .setQuitButtonText(quitButtonText)
+                .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
+    }
+
+    /**
+     * UI Configurations for the MezeScreen
+     * @param  modeScreen ins instace of a MazeScreen
+     */
+    public static void configure(ModeScreen modeScreen){
+
+    }
+
+    /**
+     * UI Configurations for the MezeScreen
+     * @param  mazeScreen ins instace of a MazeScreen
+     */
+    public static void configure(MazeScreen mazeScreen){
+
     }
 }
