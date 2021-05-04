@@ -139,15 +139,14 @@ public class UIConfigurations {
         final String quitButtonText = "Quit";
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
-
         /*
          * Setting value properties
          */
         menuScreen.setLayout(new BorderLayout());
-        menuScreen.setPlayButtonText(playButtonText)
-                .setLeaderBoardButton(leaderBoardButtonText)
-                .setQuitButtonText(quitButtonText)
-                .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+        menuScreen.createPlayButton(playButtonText)
+                .createLeaderBoardButton(leaderBoardButtonText)
+                .createQuitButton(quitButtonText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
     }
@@ -157,7 +156,12 @@ public class UIConfigurations {
      * @param  modeScreen ins instace of a MazeScreen
      */
     public static void configure(ModeScreen modeScreen){
-
+        final String headerLabelText = "MENU";
+        final Color headerLabelForeground = Color.WHITE;
+        final String playButtonText = "Play";
+        final String leaderBoardButtonText = "LeaderBoard";
+        final String quitButtonText = "Quit";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
     }
 
     /**

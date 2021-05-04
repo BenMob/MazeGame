@@ -63,7 +63,6 @@ public class MenuScreen extends AbstractScreen{
         final int rows = 12;
         final int columns = 1;
 
-
         /*
          * Define Layouts
          */
@@ -113,7 +112,7 @@ public class MenuScreen extends AbstractScreen{
      * @param label the text label of the button
      * @return this
      */
-    public MenuScreen setPlayButtonText(String label) {
+    public MenuScreen createPlayButton(String label) {
         this.playButton = new JButton(label);
         return this;
     }
@@ -123,7 +122,7 @@ public class MenuScreen extends AbstractScreen{
      * @param label: a String
      * @return this
      */
-    public MenuScreen setLeaderBoardButton(String label) {
+    public MenuScreen createLeaderBoardButton(String label) {
         this.leaderBoardButton = new JButton(label);
         return this;
     }
@@ -133,7 +132,7 @@ public class MenuScreen extends AbstractScreen{
      * @param label A String
      * @return this
      */
-    public MenuScreen setQuitButtonText(String label) {
+    public MenuScreen createQuitButton(String label) {
         this.quitButton = new JButton(label);
         this.quitButton.addActionListener(e -> this.gameFrame.goTo(new LoginScreen(gameFrame)));
         return this;

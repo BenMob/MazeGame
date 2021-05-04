@@ -1,11 +1,19 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.settings.UIConfigurations;
+
+import javax.swing.*;
 
 public class ModeScreen extends AbstractScreen{
 
+    private JButton goToEasyMazeButton;
+    private JButton goToMediumMazeButton;
+    private JButton gotToHardMazeButton;
+
     public ModeScreen(GameFrame gameFrame){
-        // Init stuff
+        this.gameFrame = gameFrame;
+        UIConfigurations.configure(this);
     }
 
     /**
@@ -30,6 +38,18 @@ public class ModeScreen extends AbstractScreen{
      */
     @Override
     public void ready() {
+
+    }
+
+    /**
+     * Creates the easy game mode button
+     * @return this
+     */
+    public ModeScreen createEasyButton(String label){
+        this.goToEasyMazeButton;
+    }
+
+    public ModeScreen createMediumButton(){
 
     }
 }
