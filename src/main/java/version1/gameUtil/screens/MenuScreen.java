@@ -116,6 +116,7 @@ public class MenuScreen extends AbstractScreen{
         /*
          * TODO: Add a goToModeScreen Logic here on this.PlayButton
          */
+        this.playButton = new JButton(label);
         return this;
     }
 
@@ -128,6 +129,7 @@ public class MenuScreen extends AbstractScreen{
         /*
          * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
          */
+        this.leaderBoardButton = new JButton();
         return this;
     }
 
@@ -139,7 +141,9 @@ public class MenuScreen extends AbstractScreen{
     public MenuScreen createQuitButton(String label) {
         /*
          * TODO: Add a goToLoginScreen Logic here on the this.quitButton
+         * Basicaly when the user clicka quit, it should take them back to the login screen
          */
+        this.quitButton = new JButton(label);
         return this;
     }
 }

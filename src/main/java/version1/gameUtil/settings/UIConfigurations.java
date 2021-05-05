@@ -91,10 +91,10 @@ public class UIConfigurations {
         loginScreen.setLayout(new BorderLayout());
         loginScreen.setIcon(icon)
                 .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
-                .setLoginButtonText(loginButtonLabelText)
-                .setGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
+                .createLoginButton(loginButtonLabelText)
+                .createGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
                 .setUserNameInputFieldLabel(inputBoxLabelText)
-                .setUserNameInputFieldMaxLength(MAX_LENGTH)
+                .createUserNameInputFieldMaxLength(MAX_LENGTH)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
     }
@@ -119,10 +119,10 @@ public class UIConfigurations {
          */
         registrationScreen.setLayout(new BorderLayout());
         registrationScreen.setIcon(icon)
-                .setRegisterButtonText(registerButtonLabelText)
-                .setGoToLoginScreenButtonText(gotToLoginButtonLabelText)
-                .setUserNameInputFieldLabel(inputBoxLabelText)
-                .setUserNameInputFieldMaxLength(MAX_LENGTH)
+                .createRegisterButton(registerButtonLabelText)
+                .createGoToLoginScreenButton(gotToLoginButtonLabelText)
+                .createUserNameInputFieldLabel(inputBoxLabelText)
+                .createUserNameInputField(MAX_LENGTH)
                 .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
@@ -171,7 +171,7 @@ public class UIConfigurations {
         modeScreen.createEasyButton(easyButtonText)
                 .createMediumButton(mediumButtonText)
                 .createHardButton(hardButtonText)
-                .createGoToMenuButton(goToMenuText)
+                .createGoToModeButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont ,headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();

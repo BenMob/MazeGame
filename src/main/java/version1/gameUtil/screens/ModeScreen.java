@@ -12,7 +12,7 @@ public class ModeScreen extends AbstractScreen{
     private JButton goToEasyMazeButton;
     private JButton goToMediumMazeButton;
     private JButton goToHardMazeButton;
-    private JButton goToMenuButton;
+    private JButton goToModeButton;
 
     public ModeScreen(GameFrame gameFrame){
         this.gameFrame = gameFrame;
@@ -76,7 +76,7 @@ public class ModeScreen extends AbstractScreen{
         goToEasyMazeButton.setFont(buttonFont);
         goToMediumMazeButton.setFont(buttonFont);
         goToHardMazeButton.setFont(buttonFont);
-        goToMenuButton.setFont(buttonFont);
+        goToModeButton.setFont(buttonFont);
 
         /*
          * Fill menu option container
@@ -90,7 +90,7 @@ public class ModeScreen extends AbstractScreen{
          * Display everything
          */
         bodyContainer.add(modeOptionsContainer);
-        this.add(goToMenuButton, BorderLayout.SOUTH);
+        this.add(goToModeButton, BorderLayout.SOUTH);
         this.add(bodyContainer, BorderLayout.CENTER);
 
     }
@@ -112,6 +112,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
          */
+        this.goToEasyMazeButton = new JButton();
         return this;
     }
 
@@ -123,6 +124,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToMediumMazeButton logic : see List of buttons at the top | Nicole
          */
+        this.goToMediumMazeButton = new JButton(label);
         return this;
     }
 
@@ -134,6 +136,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
          */
+        this.goToHardMazeButton = new JButton();
         return this;
     }
 
@@ -141,10 +144,11 @@ public class ModeScreen extends AbstractScreen{
      * Creates the go to menu game mode button
      * @return this
      */
-    public ModeScreen createGoToMenuButton(String label){
+    public ModeScreen createGoToModeButton(String label){
         /*
-         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
+         * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
          */
+        this.goToModeButton = new JButton(label);
         return this;
     }
 }

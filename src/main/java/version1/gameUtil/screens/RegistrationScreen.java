@@ -121,23 +121,28 @@ public class RegistrationScreen extends AbstractScreen{
         return this;
     }
 
-    public RegistrationScreen setRegisterButtonText(String registerButtonText) {
+    public RegistrationScreen createRegisterButton(String registerButtonText) {
         this.registerButton = new JButton(registerButtonText);
         return this;
     }
 
-    public RegistrationScreen setGoToLoginScreenButtonText(String goToLoginScreenButtonText) {
+    public RegistrationScreen createGoToLoginScreenButton(String goToLoginScreenButtonText) {
         this.goToLoginScreenButton= new MazeButton(goToLoginScreenButtonText, new GoToLoginBListener(gameFrame));
 
         return this;
     }
 
-    public RegistrationScreen setUserNameInputFieldMaxLength(int maxLength) {
+    /*
+     * Creates the input field for the form
+     * @param maxLength :maximum number of characters
+     * @return this
+     */
+    public RegistrationScreen createUserNameInputField(int maxLength) {
         this.userNameInputTextfield = new JTextField(maxLength);
         return this;
     }
 
-    public RegistrationScreen setUserNameInputFieldLabel(String userNameInputFieldLabelText) {
+    public RegistrationScreen createUserNameInputFieldLabel(String userNameInputFieldLabelText) {
         this.userNameInputFieldLabel = new JLabel(userNameInputFieldLabelText);
         return this;
     }
