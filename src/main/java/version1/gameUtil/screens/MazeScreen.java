@@ -1,58 +1,24 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.mazegenerator.MazeMap;
 import version1.gameUtil.settings.GameMode;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import version1.gameUtil.settings.UIConfigurations;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * The screen of the maze game
  */
-public class MazeScreen extends AbstractScreen implements KeyListener {
+public class MazeScreen extends AbstractScreen{
 
-    private int offset;
-    private int gridSize;
-    private boolean gameOver;
+    private final MazeMap map;
+    private JButton goToModeButton;
 
     public MazeScreen(GameFrame gameFrame, GameMode mode){
-        // Initialize things
-    }
-
-    /**
-     * Invoked when a key has been typed.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key typed event.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    /**
-     * Invoked when a key has been pressed.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key pressed event.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    /**
-     * Invoked when a key has been released.
-     * See the class description for {@link KeyEvent} for a definition of
-     * a key released event.
-     *
-     * @param e the event to be processed
-     */
-    @Override
-    public void keyReleased(KeyEvent e) {
-
+        this.gameFrame = gameFrame;
+        this.map = new MazeMap(mode);
+        UIConfigurations.configure(this);
     }
 
     /**
@@ -60,7 +26,27 @@ public class MazeScreen extends AbstractScreen implements KeyListener {
      */
     @Override
     public void buildHeader() {
+        /*
+         * First things first: sets the layout manager of the GameFrame
+         */
+        this.gameFrame.setLayout(new BorderLayout());
 
+        /*
+         * Initalize the header container
+         */
+        final JPanel headerContainer = new JPanel();
+
+        /*
+         * Style and Add header container
+         */
+        headerContainer.setBackground(gameFrame.getContentPane().getBackground());
+        headerContainer.setSize(new Dimension(gameFrame.getContentPane().getWidth(), gameFrame.getContentPane().getHeight() / 4));
+        headerContainer.add(this.headerLabel);
+
+        /*
+         * Lastly Add final result
+         */
+        this.add(headerContainer, BorderLayout.NORTH);
     }
 
     /**
@@ -68,7 +54,30 @@ public class MazeScreen extends AbstractScreen implements KeyListener {
      */
     @Override
     public void buildBody() {
+        /*
+         * First Things First: Initliaze the
+         */
+        final ImageIcon backgroundImage = new ImageIcon("background.png");
+        final JLabel bodyContainer = new JLabel(backgroundImage);
+        final Font buttonFont = new Font("Bold", Font.BOLD, 20);
 
+        /*
+         * Define Layout manager
+         */
+        bodyContainer.setLayout(new GridBagLayout());
+
+        /*
+         * Style buttons
+         */
+        goToModeButton.setFont(buttonFont);
+
+        /*
+         * Adding everything on the screen
+         */
+        this.addKeyListener(this.map);
+        bodyContainer.add(this.map);
+        this.add(bodyContainer);
+        this.add(goToModeButton, BorderLayout.SOUTH);
     }
 
     /**
@@ -77,8 +86,17 @@ public class MazeScreen extends AbstractScreen implements KeyListener {
      */
     @Override
     public void ready() {
-
+        // TODO: Implement this similarly to how it is in the LoginScreen | Ben
     }
 
-
+    /**
+     * Creates the got to menu game mode button
+     * @return this
+     */
+    public MazeScreen createGoToMenuButton(String label){
+        /*
+         * TODO: Add a goToModeScreen Logic here on this.goToModeButton | Nicole
+         */
+        return this;
+    }
 }
