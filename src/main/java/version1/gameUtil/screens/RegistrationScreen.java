@@ -1,7 +1,9 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -125,10 +127,8 @@ public class RegistrationScreen extends AbstractScreen{
     }
 
     public RegistrationScreen setGoToLoginScreenButtonText(String goToLoginScreenButtonText) {
-        this.goToLoginScreenButton = new JButton(goToLoginScreenButtonText);
+        this.goToLoginScreenButton= new MazeButton(goToLoginScreenButtonText, new GoToLoginBListener(gameFrame));
 
-        // Testing goTo()
-        this.goToLoginScreenButton.addActionListener(e -> gameFrame.goTo(new LoginScreen(gameFrame)));
         return this;
     }
 
