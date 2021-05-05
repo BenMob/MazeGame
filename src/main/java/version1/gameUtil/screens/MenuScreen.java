@@ -104,7 +104,7 @@ public class MenuScreen extends AbstractScreen{
      */
     @Override
     public void ready() {
-
+        // TODO: Implement this similarly to how it is in the LoginScreen  | Ben
     }
 
     /**
@@ -113,8 +113,9 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createPlayButton(String label) {
-        this.playButton = new JButton(label);
-        this.playButton.addActionListener(e -> this.gameFrame.goTo(new ModeScreen(gameFrame)));
+        /*
+         * TODO: Add a goToModeScreen Logic here on this.PlayButton
+         */
         return this;
     }
 
@@ -124,7 +125,9 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createLeaderBoardButton(String label) {
-        this.leaderBoardButton = new JButton(label);
+        /*
+         * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
+         */
         return this;
     }
 
@@ -134,8 +137,9 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createQuitButton(String label) {
-        this.quitButton = new JButton(label);
-        this.quitButton.addActionListener(e -> this.gameFrame.goTo(new LoginScreen(gameFrame)));
+        /*
+         * TODO: Add a goToLoginScreen Logic here on the this.quitButton
+         */
         return this;
     }
 }

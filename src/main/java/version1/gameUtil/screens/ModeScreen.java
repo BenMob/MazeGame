@@ -1,6 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
 
 import javax.swing.*;
@@ -10,7 +11,7 @@ public class ModeScreen extends AbstractScreen{
 
     private JButton goToEasyMazeButton;
     private JButton goToMediumMazeButton;
-    private JButton gotToHardMazeButton;
+    private JButton goToHardMazeButton;
     private JButton goToMenuButton;
 
     public ModeScreen(GameFrame gameFrame){
@@ -74,7 +75,7 @@ public class ModeScreen extends AbstractScreen{
          */
         goToEasyMazeButton.setFont(buttonFont);
         goToMediumMazeButton.setFont(buttonFont);
-        gotToHardMazeButton.setFont(buttonFont);
+        goToHardMazeButton.setFont(buttonFont);
         goToMenuButton.setFont(buttonFont);
 
         /*
@@ -82,7 +83,7 @@ public class ModeScreen extends AbstractScreen{
          */
         modeOptionsContainer.add(goToEasyMazeButton);
         modeOptionsContainer.add(goToMediumMazeButton);
-        modeOptionsContainer.add(gotToHardMazeButton);
+        modeOptionsContainer.add(goToHardMazeButton);
         modeOptionsContainer.setOpaque(false);
 
         /*
@@ -100,7 +101,7 @@ public class ModeScreen extends AbstractScreen{
      */
     @Override
     public void ready() {
-
+        // TODO: Implement this similarly to how it is in the LoginScreen | Ben
     }
 
     /**
@@ -108,7 +109,9 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createEasyButton(String label){
-        this.goToEasyMazeButton = new JButton(label);
+        /*
+         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
+         */
         return this;
     }
 
@@ -117,7 +120,9 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createMediumButton(String label){
-        this.goToMediumMazeButton = new JButton(label);
+        /*
+         * TODO: Add a goToMediumMazeButton logic : see List of buttons at the top | Nicole
+         */
         return this;
     }
 
@@ -126,17 +131,20 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createHardButton(String label){
-        this.gotToHardMazeButton = new JButton(label);
+        /*
+         * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
+         */
         return this;
     }
 
     /**
-     * Creates the got to menu game mode button
+     * Creates the go to menu game mode button
      * @return this
      */
     public ModeScreen createGoToMenuButton(String label){
-        this.goToMenuButton = new JButton(label);
-        this.goToMenuButton.addActionListener(e -> this.gameFrame.goTo(new MenuScreen(gameFrame)));
+        /*
+         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
+         */
         return this;
     }
 }
