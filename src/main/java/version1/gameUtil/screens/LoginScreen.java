@@ -129,11 +129,10 @@ public class LoginScreen extends AbstractScreen{
      * @return this
      */
     public LoginScreen createLoginButton(String label) {
-        this.loginButton = new JButton(label);
         /*
          * TODO: Add logic to go to Menu Screen here  | Nicole
          */
-
+        this.loginButton = new JButton(label);
         return this;
     }
 
@@ -142,7 +141,6 @@ public class LoginScreen extends AbstractScreen{
      */
     public LoginScreen createGoToRegistrationScreenButton(String label) {
         this.goToRegistrationScreenButton = new MazeButton(label, new GoToRegistrationBListener(gameFrame));
-
         return this;
     }
 

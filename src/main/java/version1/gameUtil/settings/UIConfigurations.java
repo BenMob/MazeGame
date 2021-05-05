@@ -32,20 +32,6 @@ public class UIConfigurations {
         // Min Dimension of the GameFrame
         final  Dimension minDimension = new Dimension(minFrameWidth, minFrameHeight);
 
-        /*
-         * TODO: Find a larger background image that would fill the whole screen when the user is on full screen
-         *  for now the background just has normal colors.
-         *
-        // Background image of the frame
-        final ImageIcon frameBackgroundImage = new ImageIcon("background.png");
-
-        // Background of the frame
-        final JLabel backgroundWallPaper = new JLabel(frameBackgroundImage);
-
-        // Sets the size of the background wallpaper
-        backgroundWallPaper.setSize(maxDimension);
-        */
-
         // Title of the GameFrame
         final String title = "Maze Game";
 
@@ -53,7 +39,7 @@ public class UIConfigurations {
         final boolean isResizable = false;
 
         // Starting Screen by default
-        final AbstractScreen firstScreen = new LoginScreen(gameFrame);
+        final AbstractScreen firstScreen = new MazeScreen(gameFrame, GameMode.HARD);
 
         // Build starting screen
         firstScreen.buildUI();

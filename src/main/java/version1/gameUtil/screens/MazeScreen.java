@@ -7,6 +7,7 @@ import version1.gameUtil.settings.UIConfigurations;
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  * The screen of the maze game
  */
@@ -16,9 +17,12 @@ public class MazeScreen extends AbstractScreen{
     private JButton goToModeButton;
 
     public MazeScreen(GameFrame gameFrame, GameMode mode){
-        this.gameFrame = gameFrame;
-        this.map = new MazeMap(mode);
-        UIConfigurations.configure(this);
+        this.gameFrame = gameFrame;         // Initialize the gameFrame
+        this.map = new MazeMap(mode);       // Create the Maze Map for the specified mode
+        this.setFocusable(true);            // Make this Screen Focusable to be able to attach Keylisteners to it
+        this.requestFocusInWindow();        // Request Focus from the window
+        this.addKeyListener(map);           // Listent to the map
+        UIConfigurations.configure(this);   // Configure UI
     }
 
     /**
@@ -74,7 +78,6 @@ public class MazeScreen extends AbstractScreen{
         /*
          * Adding everything on the screen
          */
-        this.addKeyListener(this.map);
         bodyContainer.add(this.map);
         this.add(bodyContainer);
         this.add(goToModeButton, BorderLayout.SOUTH);
@@ -97,6 +100,7 @@ public class MazeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToModeScreen Logic here on this.goToModeButton | Nicole
          */
+        this.goToModeButton = new JButton(label);
         return this;
     }
 }

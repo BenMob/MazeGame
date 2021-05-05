@@ -112,7 +112,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
          */
-        this.goToEasyMazeButton = new JButton();
+        this.goToEasyMazeButton = new JButton(label);
         return this;
     }
 
@@ -136,7 +136,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
          */
-        this.goToHardMazeButton = new JButton();
+        this.goToHardMazeButton = new JButton(label);
         return this;
     }
 
