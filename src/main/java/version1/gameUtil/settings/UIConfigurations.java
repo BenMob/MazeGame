@@ -15,6 +15,7 @@ import java.awt.*;
 public class UIConfigurations {
 
     private static final Font headerLabelTextFont = new Font("Bold",Font.BOLD, 30);
+    private static final Color headerLabelForeground = Color.WHITE;
 
     /**
      * UI Configurations for the Grame Frame
@@ -157,7 +158,6 @@ public class UIConfigurations {
      */
     public static void configure(ModeScreen modeScreen){
         final String headerLabelText = "PICK MODE";
-        final Color headerLabelForeground = Color.WHITE;
         final String easyButtonText = "Easy";
         final String mediumButtonText = "Medium";
         final String hardButtonText = "Hard";
@@ -182,6 +182,17 @@ public class UIConfigurations {
      * @param  mazeScreen ins instace of a MazeScreen
      */
     public static void configure(MazeScreen mazeScreen){
+        final String headerLabelText = "FIND YOUR WAY OUT OF THIS";
+        final String goToMenuText = "Change Mode";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
 
+        /*
+         * Setting values propery
+         */
+        mazeScreen.setLayout(new BorderLayout());
+        mazeScreen.createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
     }
 }
