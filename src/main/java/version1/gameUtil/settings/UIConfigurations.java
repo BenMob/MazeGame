@@ -39,7 +39,7 @@ public class UIConfigurations {
         final boolean isResizable = false;
 
         // Starting Screen by default
-        final AbstractScreen firstScreen = new MazeScreen(gameFrame, GameMode.HARD);
+        final AbstractScreen firstScreen = new LoginScreen(gameFrame);
 
         // Build starting screen
         firstScreen.buildUI();
