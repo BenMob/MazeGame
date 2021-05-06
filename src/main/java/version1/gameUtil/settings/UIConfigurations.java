@@ -157,7 +157,7 @@ public class UIConfigurations {
         modeScreen.createEasyButton(easyButtonText)
                 .createMediumButton(mediumButtonText)
                 .createHardButton(hardButtonText)
-                .createGoToModeButton(goToMenuText)
+                .createGoToMenuButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont ,headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
@@ -173,10 +173,29 @@ public class UIConfigurations {
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
         /*
-         * Setting values propery
+         * Setting values property
          */
         mazeScreen.setLayout(new BorderLayout());
         mazeScreen.createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
+    }
+
+    /**
+     * UI Configurations for the LeaderBoardScreen
+     * @param  leaderBoardScreen ins instace of a MazeScreen
+     */
+    public static void configure(LeaderBoardScreen leaderBoardScreen){
+        final String headerLabelText = "CURRENT CHAMPIONS";
+        final String goToMenuText = "Back to Menu";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
+
+        /*
+         * Setting values property
+         */
+        leaderBoardScreen.setLayout(new BorderLayout());
+        leaderBoardScreen.createGoToMenuButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
