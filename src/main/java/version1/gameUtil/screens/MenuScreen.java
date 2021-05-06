@@ -129,7 +129,7 @@ public class MenuScreen extends AbstractScreen{
         /*
          * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
          */
-        this.leaderBoardButton = new JButton();
+        this.leaderBoardButton = new JButton(label);
         return this;
     }
 
