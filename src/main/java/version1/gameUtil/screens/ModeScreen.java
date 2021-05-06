@@ -144,7 +144,7 @@ public class ModeScreen extends AbstractScreen{
      * Creates the go to menu game mode button
      * @return this
      */
-    public ModeScreen createGoToModeButton(String label){
+    public ModeScreen createGoToMenuButton(String label){
         /*
          * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
          */
