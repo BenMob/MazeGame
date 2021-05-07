@@ -45,7 +45,7 @@ public abstract class AbstractScreen extends JPanel {
      * @param textColor : Label text color
      * @return this
      */
-    public AbstractScreen setHeaderLabel(String headerLabelText, Font font, Color textColor) {
+    public AbstractScreen createHeaderLabel(String headerLabelText, Font font, Color textColor) {
         this.headerLabel = new JLabel(headerLabelText);
         this.headerLabel.setFont(font);
         this.headerLabel.setForeground(textColor);

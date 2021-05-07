@@ -4,7 +4,6 @@ import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.implementations.GoToRegistrationBListener;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
-import version1.gameUtil.widgets.buttons.MazeLoginButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -124,24 +123,29 @@ public class LoginScreen extends AbstractScreen{
         return this;
     }
 
-    public LoginScreen setLoginButtonText(String loginButtonText) {
-        this.loginButton = new JButton(loginButtonText);
-        this.loginButton.addActionListener(e -> gameFrame.goTo(new MenuScreen(gameFrame)));
-
+    /**
+     *  Creates the Login Button
+     * @param label : The label of the button
+     * @return this
+     */
+    public LoginScreen createLoginButton(String label) {
+        /*
+         * TODO: Add logic to go to Menu Screen here  | Nicole
+         */
+        this.loginButton = new JButton(label);
         return this;
     }
 
     /**
      * Creates an action listener for registration screen button
      */
-    public LoginScreen setGoToRegistrationScreenButton(String goToRegistrationScreenButtonText) {
-        this.goToRegistrationScreenButton = new MazeButton(goToRegistrationScreenButtonText, new GoToRegistrationBListener(gameFrame));
-
+    public LoginScreen createGoToRegistrationScreenButton(String label) {
+        this.goToRegistrationScreenButton = new MazeButton(label, new GoToRegistrationBListener(gameFrame));
         return this;
     }
 
 
-    public LoginScreen setUserNameInputFieldMaxLength(int maxLength) {
+    public LoginScreen createUserNameInputFieldMaxLength(int maxLength) {
         this.userNameInputTextfield = new JTextField(maxLength);
         return this;
     }

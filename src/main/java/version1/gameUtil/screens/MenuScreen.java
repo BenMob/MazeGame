@@ -63,7 +63,6 @@ public class MenuScreen extends AbstractScreen{
         final int rows = 12;
         final int columns = 1;
 
-
         /*
          * Define Layouts
          */
@@ -105,7 +104,7 @@ public class MenuScreen extends AbstractScreen{
      */
     @Override
     public void ready() {
-
+        // TODO: Implement this similarly to how it is in the LoginScreen  | Ben
     }
 
     /**
@@ -113,7 +112,10 @@ public class MenuScreen extends AbstractScreen{
      * @param label the text label of the button
      * @return this
      */
-    public MenuScreen setPlayButtonText(String label) {
+    public MenuScreen createPlayButton(String label) {
+        /*
+         * TODO: Add a goToModeScreen Logic here on this.PlayButton
+         */
         this.playButton = new JButton(label);
         return this;
     }
@@ -123,7 +125,10 @@ public class MenuScreen extends AbstractScreen{
      * @param label: a String
      * @return this
      */
-    public MenuScreen setLeaderBoardButton(String label) {
+    public MenuScreen createLeaderBoardButton(String label) {
+        /*
+         * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
+         */
         this.leaderBoardButton = new JButton(label);
         return this;
     }
@@ -133,9 +138,12 @@ public class MenuScreen extends AbstractScreen{
      * @param label A String
      * @return this
      */
-    public MenuScreen setQuitButtonText(String label) {
+    public MenuScreen createQuitButton(String label) {
+        /*
+         * TODO: Add a goToLoginScreen Logic here on the this.quitButton
+         * Basicaly when the user clicka quit, it should take them back to the login screen
+         */
         this.quitButton = new JButton(label);
-        this.quitButton.addActionListener(e -> this.gameFrame.goTo(new LoginScreen(gameFrame)));
         return this;
     }
 }

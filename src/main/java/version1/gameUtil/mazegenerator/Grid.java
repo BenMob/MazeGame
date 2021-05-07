@@ -13,8 +13,10 @@ public class Grid {
     // Location of the grid
     private Position position;
 
-    public Grid(){
-        // init things
+    public Grid(Position position){
+        this.position = position;
+        this.walls = new byte[]{1,1,1,1};
+        this.borders = new byte[]{0,0,0,0};
     }
 
     /**
@@ -30,6 +32,11 @@ public class Grid {
      * @return True if all the walls are up, otherwise False
      */
     public boolean allWallsAreUp(){
+        for (byte wall: this.walls){
+            if (wall == 0){
+                return false;
+            }
+        }
         return true;
     }
 
@@ -58,5 +65,14 @@ public class Grid {
     public Grid  setWall(int side, byte value){
         this.walls[side] = value;
         return this;
+    }
+
+    /*
+     * Sets the border
+     * @param side
+     * @param value
+     */
+    public void setBorder(int side, int value) {
+        this.borders[side] = (byte)value;
     }
 }

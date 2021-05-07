@@ -15,6 +15,7 @@ import java.awt.*;
 public class UIConfigurations {
 
     private static final Font headerLabelTextFont = new Font("Bold",Font.BOLD, 30);
+    private static final Color headerLabelForeground = Color.WHITE;
 
     /**
      * UI Configurations for the Grame Frame
@@ -30,20 +31,6 @@ public class UIConfigurations {
 
         // Min Dimension of the GameFrame
         final  Dimension minDimension = new Dimension(minFrameWidth, minFrameHeight);
-
-        /*
-         * TODO: Find a larger background image that would fill the whole screen when the user is on full screen
-         *  for now the background just has normal colors.
-         *
-        // Background image of the frame
-        final ImageIcon frameBackgroundImage = new ImageIcon("background.png");
-
-        // Background of the frame
-        final JLabel backgroundWallPaper = new JLabel(frameBackgroundImage);
-
-        // Sets the size of the background wallpaper
-        backgroundWallPaper.setSize(maxDimension);
-        */
 
         // Title of the GameFrame
         final String title = "Maze Game";
@@ -90,10 +77,10 @@ public class UIConfigurations {
         loginScreen.setLayout(new BorderLayout());
         loginScreen.setIcon(icon)
                 .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
-                .setLoginButtonText(loginButtonLabelText)
-                .setGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
+                .createLoginButton(loginButtonLabelText)
+                .createGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
                 .setUserNameInputFieldLabel(inputBoxLabelText)
-                .setUserNameInputFieldMaxLength(MAX_LENGTH)
+                .createUserNameInputFieldMaxLength(MAX_LENGTH)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
     }
@@ -118,10 +105,10 @@ public class UIConfigurations {
          */
         registrationScreen.setLayout(new BorderLayout());
         registrationScreen.setIcon(icon)
-                .setRegisterButtonText(registerButtonLabelText)
-                .setGoToLoginScreenButtonText(gotToLoginButtonLabelText)
-                .setUserNameInputFieldLabel(inputBoxLabelText)
-                .setUserNameInputFieldMaxLength(MAX_LENGTH)
+                .createRegisterButton(registerButtonLabelText)
+                .createGoToLoginScreenButton(gotToLoginButtonLabelText)
+                .createUserNameInputFieldLabel(inputBoxLabelText)
+                .createUserNameInputField(MAX_LENGTH)
                 .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
@@ -139,15 +126,14 @@ public class UIConfigurations {
         final String quitButtonText = "Quit";
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
-
         /*
          * Setting value properties
          */
         menuScreen.setLayout(new BorderLayout());
-        menuScreen.setPlayButtonText(playButtonText)
-                .setLeaderBoardButton(leaderBoardButtonText)
-                .setQuitButtonText(quitButtonText)
-                .setHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+        menuScreen.createPlayButton(playButtonText)
+                .createLeaderBoardButton(leaderBoardButtonText)
+                .createQuitButton(quitButtonText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
     }
@@ -157,7 +143,24 @@ public class UIConfigurations {
      * @param  modeScreen ins instace of a MazeScreen
      */
     public static void configure(ModeScreen modeScreen){
+        final String headerLabelText = "PICK MODE";
+        final String easyButtonText = "Easy";
+        final String mediumButtonText = "Medium";
+        final String hardButtonText = "Hard";
+        final String goToMenuText = "Cancel";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
 
+        /*
+         * Setting values property
+         */
+        modeScreen.setLayout(new BorderLayout());
+        modeScreen.createEasyButton(easyButtonText)
+                .createMediumButton(mediumButtonText)
+                .createHardButton(hardButtonText)
+                .createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont ,headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
     }
 
     /**
@@ -165,6 +168,36 @@ public class UIConfigurations {
      * @param  mazeScreen ins instace of a MazeScreen
      */
     public static void configure(MazeScreen mazeScreen){
+        final String headerLabelText = "FIND YOUR WAY OUT OF THIS";
+        final String goToMenuText = "Change Mode";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
 
+        /*
+         * Setting values property
+         */
+        mazeScreen.setLayout(new BorderLayout());
+        mazeScreen.createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
+    }
+
+    /**
+     * UI Configurations for the LeaderBoardScreen
+     * @param  leaderBoardScreen ins instace of a MazeScreen
+     */
+    public static void configure(LeaderBoardScreen leaderBoardScreen){
+        final String headerLabelText = "CURRENT CHAMPIONS";
+        final String goToMenuText = "Back to Menu";
+        final Color gameFrameBGColor = new Color(30, 49, 120);
+
+        /*
+         * Setting values property
+         */
+        leaderBoardScreen.setLayout(new BorderLayout());
+        leaderBoardScreen.createGoToMenuButton(goToMenuText)
+                .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
+                .setGameFrameBackgroundColor(gameFrameBGColor)
+                .ready();
     }
 }
