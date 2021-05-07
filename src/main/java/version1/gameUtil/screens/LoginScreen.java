@@ -1,6 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToMenuBListener;
 import version1.gameUtil.listeners.implementations.GoToRegistrationBListener;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
@@ -124,20 +125,18 @@ public class LoginScreen extends AbstractScreen{
     }
 
     /**
-     *  Creates the Login Button
+     *  Creates the Login Button and transitions to menu screen
      * @param label : The label of the button
      * @return this
      */
     public LoginScreen createLoginButton(String label) {
-        /*
-         * TODO: Add logic to go to Menu Screen here  | Nicole
-         */
-        this.loginButton = new JButton(label);
+        this.loginButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 
+
     /**
-     * Creates an action listener for registration screen button
+     * Creates an action listener for registration screen button and transitions to registration screen
      */
     public LoginScreen createGoToRegistrationScreenButton(String label) {
         this.goToRegistrationScreenButton = new MazeButton(label, new GoToRegistrationBListener(gameFrame));
