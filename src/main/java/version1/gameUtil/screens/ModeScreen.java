@@ -1,6 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToHardMazeBListener;
 import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.listeners.implementations.GoToMediumMazeBListener;
 import version1.gameUtil.settings.GameMode;
@@ -147,7 +148,13 @@ public class ModeScreen extends AbstractScreen{
         this.goToHardMazeButton = new JButton(label);
         return this;
     }
-
+    /*
+     * Logic for Hard Mode Screen - Goes to Hard Mode Game Screen
+     */
+    public ModeScreen createGoToHardMazeButton(String goToLoginScreenButtonText) {
+        this.goToHardMazeButton= new MazeButton(goToLoginScreenButtonText, new GoToHardMazeBListener(gameFrame));
+        return this;
+    }
     /**
      * Creates the go to menu game mode button
      * @return this
