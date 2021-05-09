@@ -1,6 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToEasyMazeBListener;
 import version1.gameUtil.listeners.implementations.GoToHardMazeBListener;
 import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.listeners.implementations.GoToMediumMazeBListener;
@@ -121,6 +122,15 @@ public class ModeScreen extends AbstractScreen{
     }
 
     /**
+     * Logic for Easy Mode Screen - Goes to Medium Mode Game Screen
+     */
+    public ModeScreen createGoToEasyMazeButton(String goToEasyModeText) {
+        this.goToEasyMazeButton= new MazeButton(goToEasyModeText, new GoToEasyMazeBListener(gameFrame));
+        return this;
+    }
+
+
+    /**
      * Creates the medium game mode button
      * @return this
      */
@@ -132,8 +142,8 @@ public class ModeScreen extends AbstractScreen{
     /*
      * Logic for Medium Mode Screen - Goes to Medium Mode Game Screen
      */
-    public ModeScreen createGoToMediumMazeButton(String goToLoginScreenButtonText) {
-        this.goToMediumMazeButton= new MazeButton(goToLoginScreenButtonText, new GoToMediumMazeBListener(gameFrame));
+    public ModeScreen createGoToMediumMazeButton(String goToMediumModeText) {
+        this.goToMediumMazeButton= new MazeButton(goToMediumModeText, new GoToMediumMazeBListener(gameFrame));
         return this;
     }
 
@@ -151,8 +161,8 @@ public class ModeScreen extends AbstractScreen{
     /*
      * Logic for Hard Mode Screen - Goes to Hard Mode Game Screen
      */
-    public ModeScreen createGoToHardMazeButton(String goToLoginScreenButtonText) {
-        this.goToHardMazeButton= new MazeButton(goToLoginScreenButtonText, new GoToHardMazeBListener(gameFrame));
+    public ModeScreen createGoToHardMazeButton(String goToHardModeText) {
+        this.goToHardMazeButton= new MazeButton(goToHardModeText, new GoToHardMazeBListener(gameFrame));
         return this;
     }
     /**
