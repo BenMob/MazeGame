@@ -2,7 +2,6 @@ package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
-import version1.gameUtil.mazegenerator.Maze;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
 
