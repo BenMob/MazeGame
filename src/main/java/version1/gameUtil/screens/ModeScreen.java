@@ -1,11 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
-import version1.gameUtil.listeners.implementations.GoToEasyMazeBListener;
-import version1.gameUtil.listeners.implementations.GoToHardMazeBListener;
-import version1.gameUtil.listeners.implementations.GoToLoginBListener;
-import version1.gameUtil.listeners.implementations.GoToMediumMazeBListener;
-import version1.gameUtil.settings.GameMode;
+import version1.gameUtil.listeners.implementations.*;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
 
@@ -17,7 +13,8 @@ public class ModeScreen extends AbstractScreen{
     private JButton goToEasyMazeButton;
     private JButton goToMediumMazeButton;
     private JButton goToHardMazeButton;
-    private JButton goToModeButton;
+    private JButton goToMenuButton;
+    private JButton goToCancelButton;
 
     public ModeScreen(GameFrame gameFrame){
         this.gameFrame = gameFrame;
@@ -81,7 +78,7 @@ public class ModeScreen extends AbstractScreen{
         goToEasyMazeButton.setFont(buttonFont);
         goToMediumMazeButton.setFont(buttonFont);
         goToHardMazeButton.setFont(buttonFont);
-        goToModeButton.setFont(buttonFont);
+        goToMenuButton.setFont(buttonFont);
 
         /*
          * Fill menu option container
@@ -95,7 +92,7 @@ public class ModeScreen extends AbstractScreen{
          * Display everything
          */
         bodyContainer.add(modeOptionsContainer);
-        this.add(goToModeButton, BorderLayout.SOUTH);
+        this.add(goToMenuButton, BorderLayout.SOUTH);
         this.add(bodyContainer, BorderLayout.CENTER);
 
     }
@@ -119,7 +116,7 @@ public class ModeScreen extends AbstractScreen{
     }
 
     /**
-     * Logic for Easy Mode Screen - Goes to Medium Mode Game Screen
+     * Logic for Easy Mode button - Goes to Medium Mode Game Screen
      * @param goToEasyModeText String, label for button
      * return this
      */
@@ -139,7 +136,7 @@ public class ModeScreen extends AbstractScreen{
     }
 
     /*
-     * Logic for Medium Mode Screen - Goes to Medium Mode Game Screen
+     * Logic for Medium Mode button - Goes to Medium Mode Game Screen
      * @param goToMediumModeText String, label for button
      * @return this
      */
@@ -157,7 +154,7 @@ public class ModeScreen extends AbstractScreen{
         return this;
     }
     /*
-     * Logic for Hard Mode Screen - Goes to Hard Mode Game Screen
+     * Logic for Hard Mode button - Goes to Hard Mode Game Screen
      * @label goToHardModeText String, label for button
      * return this
      */
@@ -169,11 +166,20 @@ public class ModeScreen extends AbstractScreen{
      * Creates the go to menu game mode button
      * @return this
      */
-    public ModeScreen createGoToMenuButton(String label){
+    public ModeScreen createCancelButton(String label){
         /*
          * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
          */
-        this.goToModeButton = new JButton(label);
+        this.goToMenuButton = new JButton(label);
+        return this;
+    }
+    /*
+     * Logic for cancel button - Goes to Main Menu Screen
+     * @label label String, label for button
+     * return this
+     */
+    public ModeScreen createGoToCancelButton(String label) {
+        this.goToMenuButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 }
