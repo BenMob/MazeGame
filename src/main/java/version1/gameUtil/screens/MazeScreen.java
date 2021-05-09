@@ -1,9 +1,13 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToMenuBListener;
+import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.MazeMap;
 import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -96,11 +100,8 @@ public class MazeScreen extends AbstractScreen{
      * Creates the got to menu game mode button
      * @return this
      */
-    public MazeScreen createGoToMenuButton(String label){
-        /*
-         * TODO: Add a goToModeScreen Logic here on this.goToModeButton | Nicole
-         */
-        this.goToModeButton = new JButton(label);
+    public MazeScreen createGoToModeButton(String label){
+        this.goToModeButton = new MazeButton(label, new GoToModeBListener(gameFrame));
         return this;
     }
 }
