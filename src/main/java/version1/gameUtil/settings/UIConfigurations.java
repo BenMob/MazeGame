@@ -176,7 +176,7 @@ public class UIConfigurations {
          * Setting values property
          */
         mazeScreen.setLayout(new BorderLayout());
-        mazeScreen.createGoToMenuButton(goToMenuText)
+        mazeScreen.createGoToModeButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();

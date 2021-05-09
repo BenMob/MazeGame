@@ -1,9 +1,12 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToMenuBListener;
+import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.Grid;
 import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -237,10 +240,7 @@ public class LeaderBoardScreen extends AbstractScreen{
      * @return this
      */
     public LeaderBoardScreen createGoToMenuButton(String label){
-        /*
-         * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
-         */
-        this.goToMenuButton = new JButton(label);
+        this.goToMenuButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 }
