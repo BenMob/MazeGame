@@ -202,6 +202,7 @@ public class UIConfigurations {
          */
         leaderBoardScreen.setLayout(new BorderLayout());
         leaderBoardScreen.createGoToMenuButton(goToMenuText)
+                .createGoToBackToMenuButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
