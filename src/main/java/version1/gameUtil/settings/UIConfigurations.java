@@ -132,6 +132,7 @@ public class UIConfigurations {
         menuScreen.setLayout(new BorderLayout());
         menuScreen.createPlayButton(playButtonText)
                 .createLeaderBoardButton(leaderBoardButtonText)
+                .createGoToLeaderBoardButton(leaderBoardButtonText)
                 .createQuitButton(quitButtonText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
