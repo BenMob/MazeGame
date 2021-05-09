@@ -149,7 +149,7 @@ public class UIConfigurations {
         final String easyButtonText = "Easy";
         final String mediumButtonText = "Medium";
         final String hardButtonText = "Hard";
-        final String goToMenuText = "Cancel";
+        final String cancelButtonText = "Cancel";
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
         /*
@@ -157,9 +157,10 @@ public class UIConfigurations {
          */
         modeScreen.setLayout(new BorderLayout());
         modeScreen.createEasyButton(easyButtonText)
+                .createCancelButton(cancelButtonText)
+                .createGoToCancelButton(cancelButtonText)
                 .createMediumButton(mediumButtonText)
                 .createHardButton(hardButtonText)
-                .createGoToMenuButton(goToMenuText)
                 .createGoToEasyMazeButton(easyButtonText)
                 .createGoToMediumMazeButton(mediumButtonText)
                 .createGoToHardMazeButton(hardButtonText)
