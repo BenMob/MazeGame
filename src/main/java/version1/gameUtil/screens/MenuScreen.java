@@ -1,6 +1,8 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToLeaderBoardBListener;
+import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
@@ -125,10 +127,7 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createLeaderBoardButton(String label) {
-        /*
-         * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
-         */
-        this.leaderBoardButton = new JButton(label);
+        this.leaderBoardButton = new MazeButton(label, new GoToLeaderBoardBListener(gameFrame));
         return this;
     }
 
@@ -139,10 +138,9 @@ public class MenuScreen extends AbstractScreen{
      */
     public MenuScreen createQuitButton(String label) {
         /*
-         * TODO: Add a goToLoginScreen Logic here on the this.quitButton
          * Basicaly when the user clicka quit, it should take them back to the login screen
          */
-        this.quitButton = new JButton(label);
+        this.quitButton = new MazeButton(label, new GoToLoginBListener(gameFrame));
         return this;
     }
 }
