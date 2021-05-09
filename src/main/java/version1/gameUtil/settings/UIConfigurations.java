@@ -183,6 +183,7 @@ public class UIConfigurations {
          */
         mazeScreen.setLayout(new BorderLayout());
         mazeScreen.createGoToMenuButton(goToMenuText)
+                .createGoToModeMenuButton(goToMenuText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
