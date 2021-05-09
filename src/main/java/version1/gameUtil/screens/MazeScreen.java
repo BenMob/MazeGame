@@ -20,7 +20,7 @@ public class MazeScreen extends AbstractScreen{
         this.gameFrame = gameFrame;         // Initialize the gameFrame
         this.map = new MazeMap(mode);       // Create the Maze Map for the specified mode
         this.setFocusable(true);            // Make this Screen Focusable to be able to attach Keylisteners to it
-        this.requestFocusInWindow();        // Request Focus from the window
+        this.grabFocus() ;                  // Request Focus from the window
         this.addKeyListener(map);           // Listent to the map
         UIConfigurations.configure(this);   // Configure UI
     }
