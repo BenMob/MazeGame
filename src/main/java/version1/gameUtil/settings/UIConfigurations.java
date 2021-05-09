@@ -158,6 +158,8 @@ public class UIConfigurations {
                 .createMediumButton(mediumButtonText)
                 .createHardButton(hardButtonText)
                 .createGoToMenuButton(goToMenuText)
+                .createGoToMediumMazeButton(mediumButtonText)
+                .createGoToHardMazeButton(hardButtonText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont ,headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
