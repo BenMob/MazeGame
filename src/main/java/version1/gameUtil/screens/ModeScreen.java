@@ -167,9 +167,6 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createCancelButton(String label){
-        /*
-         * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
-         */
         this.goToMenuButton = new JButton(label);
         return this;
     }
