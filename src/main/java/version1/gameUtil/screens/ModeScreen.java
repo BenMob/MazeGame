@@ -114,15 +114,14 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createEasyButton(String label){
-        /*
-         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
-         */
         this.goToEasyMazeButton = new JButton(label);
         return this;
     }
 
     /**
      * Logic for Easy Mode Screen - Goes to Medium Mode Game Screen
+     * @param goToEasyModeText String, label for button
+     * return this
      */
     public ModeScreen createGoToEasyMazeButton(String goToEasyModeText) {
         this.goToEasyMazeButton= new MazeButton(goToEasyModeText, new GoToEasyMazeBListener(gameFrame));
@@ -141,6 +140,8 @@ public class ModeScreen extends AbstractScreen{
 
     /*
      * Logic for Medium Mode Screen - Goes to Medium Mode Game Screen
+     * @param goToMediumModeText String, label for button
+     * @return this
      */
     public ModeScreen createGoToMediumMazeButton(String goToMediumModeText) {
         this.goToMediumMazeButton= new MazeButton(goToMediumModeText, new GoToMediumMazeBListener(gameFrame));
@@ -152,14 +153,13 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createHardButton(String label){
-        /*
-         * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
-         */
         this.goToHardMazeButton = new JButton(label);
         return this;
     }
     /*
      * Logic for Hard Mode Screen - Goes to Hard Mode Game Screen
+     * @label goToHardModeText String, label for button
+     * return this
      */
     public ModeScreen createGoToHardMazeButton(String goToHardModeText) {
         this.goToHardMazeButton= new MazeButton(goToHardModeText, new GoToHardMazeBListener(gameFrame));
