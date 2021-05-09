@@ -134,6 +134,7 @@ public class UIConfigurations {
                 .createLeaderBoardButton(leaderBoardButtonText)
                 .createGoToLeaderBoardButton(leaderBoardButtonText)
                 .createQuitButton(quitButtonText)
+                .createGoToLogInScreenButton(quitButtonText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
