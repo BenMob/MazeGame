@@ -1,6 +1,8 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToEasyMazeBListener;
+import version1.gameUtil.listeners.implementations.GoToLeaderBoardBListener;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.Maze;
 import version1.gameUtil.settings.UIConfigurations;
@@ -126,16 +128,23 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createLeaderBoardButton(String label) {
-        /*
-         * TODO: Add a goToLeaderBoardScreen Logic here on the leaderBoardButton
-         */
         this.leaderBoardButton = new JButton(label);
         return this;
     }
 
     /**
+     * Logic for Leader Board Screen Button - Goes to Leader Board Screen
+     * @param label String, label for button
+     * @return this
+     */
+    public MenuScreen createGoToLeaderBoardButton(String label) {
+        this.leaderBoardButton= new MazeButton(label, new GoToLeaderBoardBListener(gameFrame)) ;
+        return this;
+    }
+
+    /**
      * Creates the quit button with the following label
-     * @param label A String
+     * @param label a String
      * @return this
      */
     public MenuScreen createQuitButton(String label) {
