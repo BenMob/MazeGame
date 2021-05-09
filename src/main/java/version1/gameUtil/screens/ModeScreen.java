@@ -1,8 +1,11 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToLoginBListener;
+import version1.gameUtil.listeners.implementations.GoToMediumMazeBListener;
 import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -121,10 +124,15 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createMediumButton(String label){
-        /*
-         * TODO: Add a goToMediumMazeButton logic : see List of buttons at the top | Nicole
-         */
         this.goToMediumMazeButton = new JButton(label);
+        return this;
+    }
+
+    /*
+     * Logic for Medium Mode Screen - Goes to Medium Mode Game Screen
+     */
+    public ModeScreen createGoToMediumMazeButton(String goToLoginScreenButtonText) {
+        this.goToMediumMazeButton= new MazeButton(goToLoginScreenButtonText, new GoToMediumMazeBListener(gameFrame));
         return this;
     }
 
