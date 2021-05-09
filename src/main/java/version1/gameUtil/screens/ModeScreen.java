@@ -1,10 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
-import version1.gameUtil.listeners.implementations.GoToEasyMazeBListener;
-import version1.gameUtil.listeners.implementations.GoToHardMazeBListener;
-import version1.gameUtil.listeners.implementations.GoToLoginBListener;
-import version1.gameUtil.listeners.implementations.GoToMediumMazeBListener;
+import version1.gameUtil.listeners.implementations.*;
 import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
@@ -114,36 +111,16 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createEasyButton(String label){
-        /*
-         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
-         */
-        this.goToEasyMazeButton = new JButton(label);
+        this.goToEasyMazeButton = new MazeButton(label, new GoToEasyMazeBListener(gameFrame));
         return this;
     }
-
-    /**
-     * Logic for Easy Mode Screen - Goes to Medium Mode Game Screen
-     */
-    public ModeScreen createGoToEasyMazeButton(String goToEasyModeText) {
-        this.goToEasyMazeButton= new MazeButton(goToEasyModeText, new GoToEasyMazeBListener(gameFrame));
-        return this;
-    }
-
 
     /**
      * Creates the medium game mode button
      * @return this
      */
     public ModeScreen createMediumButton(String label){
-        this.goToMediumMazeButton = new JButton(label);
-        return this;
-    }
-
-    /*
-     * Logic for Medium Mode Screen - Goes to Medium Mode Game Screen
-     */
-    public ModeScreen createGoToMediumMazeButton(String goToMediumModeText) {
-        this.goToMediumMazeButton= new MazeButton(goToMediumModeText, new GoToMediumMazeBListener(gameFrame));
+        this.goToMediumMazeButton = new MazeButton(label, new GoToMediumMazeBListener(gameFrame));
         return this;
     }
 
@@ -152,28 +129,17 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createHardButton(String label){
-        /*
-         * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
-         */
-        this.goToHardMazeButton = new JButton(label);
+
+        this.goToHardMazeButton = new MazeButton(label, new GoToHardMazeBListener(gameFrame));
         return this;
     }
-    /*
-     * Logic for Hard Mode Screen - Goes to Hard Mode Game Screen
-     */
-    public ModeScreen createGoToHardMazeButton(String goToHardModeText) {
-        this.goToHardMazeButton= new MazeButton(goToHardModeText, new GoToHardMazeBListener(gameFrame));
-        return this;
-    }
+
     /**
      * Creates the go to menu game mode button
      * @return this
      */
     public ModeScreen createGoToMenuButton(String label){
-        /*
-         * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
-         */
-        this.goToModeButton = new JButton(label);
+        this.goToModeButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 }
