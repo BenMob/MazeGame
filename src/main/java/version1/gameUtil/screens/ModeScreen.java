@@ -1,8 +1,10 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.*;
 import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.MazeButton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -109,10 +111,7 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createEasyButton(String label){
-        /*
-         * TODO: Add a goToEasyMazeButton logic : see List of buttons at the top  | Nicole
-         */
-        this.goToEasyMazeButton = new JButton(label);
+        this.goToEasyMazeButton = new MazeButton(label, new GoToEasyMazeBListener(gameFrame));
         return this;
     }
 
@@ -121,10 +120,7 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createMediumButton(String label){
-        /*
-         * TODO: Add a goToMediumMazeButton logic : see List of buttons at the top | Nicole
-         */
-        this.goToMediumMazeButton = new JButton(label);
+        this.goToMediumMazeButton = new MazeButton(label, new GoToMediumMazeBListener(gameFrame));
         return this;
     }
 
@@ -133,10 +129,8 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createHardButton(String label){
-        /*
-         * TODO: Add a goToHardMazeButton logic : see List of buttons at the top | Nicole
-         */
-        this.goToHardMazeButton = new JButton(label);
+
+        this.goToHardMazeButton = new MazeButton(label, new GoToHardMazeBListener(gameFrame));
         return this;
     }
 
@@ -145,10 +139,7 @@ public class ModeScreen extends AbstractScreen{
      * @return this
      */
     public ModeScreen createGoToMenuButton(String label){
-        /*
-         * TODO: Add a gotToModeScreen logic : see List of buttons at the top  | Nicole
-         */
-        this.goToModeButton = new JButton(label);
+        this.goToModeButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 }
