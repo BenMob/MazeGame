@@ -3,6 +3,7 @@ package version1.gameUtil.screens;
 import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.implementations.GoToEasyMazeBListener;
 import version1.gameUtil.listeners.implementations.GoToLeaderBoardBListener;
+import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.Maze;
 import version1.gameUtil.settings.UIConfigurations;
@@ -148,11 +149,16 @@ public class MenuScreen extends AbstractScreen{
      * @return this
      */
     public MenuScreen createQuitButton(String label) {
-        /*
-         * TODO: Add a goToLoginScreen Logic here on the this.quitButton
-         * Basicaly when the user clicka quit, it should take them back to the login screen
-         */
         this.quitButton = new JButton(label);
+        return this;
+    }
+    /**
+     * Logic for Quit Button - Goes to Log In Screen
+     * @param label String, label for button
+     * @return this
+     */
+    public MenuScreen createGoToLogInScreenButton(String label) {
+        this.quitButton= new MazeButton(label, new GoToLoginBListener(gameFrame)) ;
         return this;
     }
 }
