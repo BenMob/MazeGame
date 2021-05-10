@@ -1,7 +1,6 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
-import version1.gameUtil.listeners.implementations.GoToMenuBListener;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.MazeMap;
 import version1.gameUtil.settings.GameMode;
@@ -23,9 +22,7 @@ public class MazeScreen extends AbstractScreen{
     public MazeScreen(GameFrame gameFrame, GameMode mode){
         this.gameFrame = gameFrame;         // Initialize the gameFrame
         this.map = new MazeMap(mode);       // Create the Maze Map for the specified mode
-        this.setFocusable(true);            // Make this Screen Focusable to be able to attach Keylisteners to it
-        this.requestFocusInWindow();        // Request Focus from the window
-        this.addKeyListener(map);           // Listent to the map
+        this.addKeyListener(map);           // Listen to the map
         UIConfigurations.configure(this);   // Configure UI
     }
 

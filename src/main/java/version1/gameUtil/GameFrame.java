@@ -71,6 +71,12 @@ public class GameFrame extends JFrame {
         // Add the current screen on the Content Panel
         content.add(currentScreen);
 
+        // Makes the current screen focusable
+        currentScreen.setFocusable(true);
+
+        // Gives current screenfocus
+        currentScreen.grabFocus();
+
         // Validate the content
         content.revalidate();
 
@@ -92,6 +98,7 @@ public class GameFrame extends JFrame {
      * Sets the frame to be visible to launch the game
      */
     public void launch(){
+        this.pack();
         this.setVisible(true);
     }
 }

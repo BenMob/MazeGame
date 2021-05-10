@@ -8,7 +8,7 @@ import version1.gameUtil.settings.GameMode;
 import java.awt.event.ActionEvent;
 
 public class GoToHardMazeBListener implements MazeActionListenerIF {
-    private GameFrame gameFrame;
+    private final GameFrame gameFrame;
 
     public GoToHardMazeBListener(GameFrame gameFrame){
         this.gameFrame = gameFrame;
