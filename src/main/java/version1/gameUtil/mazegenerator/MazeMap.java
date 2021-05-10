@@ -32,8 +32,8 @@ public class MazeMap extends JPanel implements KeyListener {
         /*
          *Determinesb the map size based on the given game mode
          */
-        final int EASYMAPSIZE = 25;
-        final int MEDIUMMAPSIZE = 30;
+        final int EASYMAPSIZE = 15;
+        final int MEDIUMMAPSIZE = 25;
         final int HARDMAPSIZE = 35;
         int map_size;
         switch (mode) {
