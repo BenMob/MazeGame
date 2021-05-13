@@ -1,10 +1,15 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.AuthenticationManager;
 import version1.gameUtil.listeners.implementations.GoToMenuBListener;
 import version1.gameUtil.listeners.implementations.GoToRegistrationBListener;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.AbstractMazeButton;
 import version1.gameUtil.widgets.buttons.MazeButton;
+import version1.gameUtil.widgets.buttons.MazeLoginButton;
+import version1.gameUtil.widgets.inputfields.AbstractMazeTextField;
+import version1.gameUtil.widgets.inputfields.LoginTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,17 +23,16 @@ public class LoginScreen extends AbstractScreen{
     private JLabel icon;
 
     // The login button TODO: Replace with customized button from widgets
-    private MazeButton loginButton;
+    private AbstractMazeButton loginButton;
 
     // GoToRegister button TODO: Replace with customized button from widgets
-    private JButton goToRegistrationScreenButton;
-
+    private MazeButton goToRegistrationScreenButton;
 
     // The username textfield label
     private JLabel userNameInputFieldLabel;
 
     // Username input text field TODO: Replace with customized textfield from widgets
-    private JTextField userNameInputTextfield;
+    private AbstractMazeTextField userNameInputTextfield;
 
     public LoginScreen(GameFrame gameFrame){
 
@@ -127,7 +131,8 @@ public class LoginScreen extends AbstractScreen{
      * @return this
      */
     public LoginScreen createLoginButton(String label) {
-        this.loginButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
+        this.loginButton = new MazeLoginButton(label);
+        this.gameFrame.authentication().linkLoginButton(loginButton);  // Links Login Button to the Mediator
         return this;
     }
 
@@ -140,9 +145,9 @@ public class LoginScreen extends AbstractScreen{
         return this;
     }
 
-
-    public LoginScreen createUserNameInputFieldMaxLength(int maxLength) {
-        this.userNameInputTextfield = new JTextField(maxLength);
+    public LoginScreen createUserNameInputField(int maxLength) {
+        this.userNameInputTextfield = new LoginTextField(maxLength);
+        this.gameFrame.authentication().linkLoginTextField(userNameInputTextfield); // Link Login TextField to the Mediator
         return this;
     }
 
@@ -161,10 +166,7 @@ public class LoginScreen extends AbstractScreen{
      */
     @Override
     public void ready(){
-        /*
-            TODO: Create Exception Handling classes to avoid hardcoding stiff like this
-            Low priority at the moment
-         */
+
         final String headerLabelErrorMsg = "LoginScreen.headerLabel cannot be null";
         final String iconErrorMsg = "LoginScreen.icon cannot be null";
         final String loginButtonErrorMsg = "LoginScreen.loginButton cannot be null";

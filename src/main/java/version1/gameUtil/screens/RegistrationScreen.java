@@ -4,8 +4,11 @@ import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.implementations.AuthenticationManager;
 import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.settings.UIConfigurations;
+import version1.gameUtil.widgets.buttons.AbstractMazeButton;
 import version1.gameUtil.widgets.buttons.MazeButton;
 import version1.gameUtil.widgets.buttons.MazeRegisterButton;
+import version1.gameUtil.widgets.inputfields.AbstractMazeTextField;
+import version1.gameUtil.widgets.inputfields.RegisterTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,13 +22,13 @@ public class RegistrationScreen extends AbstractScreen{
     private MazeButton registerButton;
 
     // GoToRegister button
-    private MazeButton goToLoginScreenButton;
+    private AbstractMazeButton goToLoginScreenButton;
 
     // The username textfield label
     private JLabel userNameInputFieldLabel;
 
     // Username input text field
-    private JTextField userNameInputTextfield;
+    private AbstractMazeTextField userNameInputTextfield;
 
     public RegistrationScreen(GameFrame gameFrame){
 
@@ -120,8 +123,8 @@ public class RegistrationScreen extends AbstractScreen{
     }
 
     public RegistrationScreen createRegisterButton(String registerButtonText) {
-        // TODO: Refactor this line
-        this.registerButton = new MazeRegisterButton(registerButtonText, new AuthenticationManager(gameFrame));
+        this.registerButton = new MazeRegisterButton(registerButtonText);
+        this.gameFrame.authentication().linkRegisterButton(registerButton);  // Link Register Button to the Mediator
         return this;
     }
 
@@ -137,7 +140,8 @@ public class RegistrationScreen extends AbstractScreen{
      * @return this
      */
     public RegistrationScreen createUserNameInputField(int maxLength) {
-        this.userNameInputTextfield = new JTextField(maxLength);
+        this.userNameInputTextfield = new RegisterTextField(maxLength);
+        this.gameFrame.authentication().linkRegisterTextField(userNameInputTextfield);  // Link Register TextField to the Mediator
         return this;
     }
 

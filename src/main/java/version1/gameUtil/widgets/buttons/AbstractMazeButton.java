@@ -4,6 +4,23 @@ import javax.swing.JButton;
 
 
 public abstract class AbstractMazeButton extends JButton {
-private String label;
+    private final String label;
 
+    protected AbstractMazeButton(String label) {
+        this.label = label;
+    }
+
+    /**
+     * Enables a button
+     */
+    public  void enableButton(){
+        this.setEnabled(true);
+    }
+
+    /**
+     * Disables the button
+     */
+    public void disableButton(){
+        this.setEnabled(false);
+    }
 }

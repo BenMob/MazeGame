@@ -1,22 +1,25 @@
 package version1.gameUtil;
 
+import version1.gameUtil.listeners.implementations.AuthenticationManager;
 import version1.gameUtil.screens.AbstractScreen;
 import version1.gameUtil.settings.UIConfigurations;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 public class GameFrame extends JFrame {
 
     // The screen that is currently displayed on the GameFrame
     private AbstractScreen currentScreen;
 
+    // The authentication manager object
+    private final AuthenticationManager AUTHENTICATION_MANAGER;
+
     /**
      * Configure default settings on the JFrame
      */
     public GameFrame(){
+        AUTHENTICATION_MANAGER = new AuthenticationManager();
         UIConfigurations.configure(this);
     }
 
@@ -85,13 +88,19 @@ public class GameFrame extends JFrame {
     }
 
     /**
-
-    /**
      * Sets the background color
      * @param color: background color
      */
     public void setBackgroundColor(Color color){
         this.getContentPane().setBackground(color);
+    }
+
+    /**
+     * Returns the Authentication manager so that auth widgets can be registered to it
+     * @return AuthenticationManager
+     */
+    public AuthenticationManager authentication(){
+        return AUTHENTICATION_MANAGER;
     }
 
     /**
