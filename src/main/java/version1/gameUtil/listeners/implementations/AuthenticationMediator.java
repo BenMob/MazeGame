@@ -1,5 +1,6 @@
 package version1.gameUtil.listeners.implementations;
 
+import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.interfaces.LoginBListenerIF;
 import version1.gameUtil.listeners.interfaces.LoginTextFieldListenerIF;
 import version1.gameUtil.listeners.interfaces.RegisterBListenerIF;
@@ -17,6 +18,11 @@ public abstract class AuthenticationMediator implements LoginBListenerIF, Regist
     protected AbstractMazeButton registerButton;
     protected AbstractMazeTextField loginTextField;
     protected AbstractMazeTextField registerTextField;
+    protected GameFrame gameFrame;
+
+    public AuthenticationMediator(GameFrame gameFrame){
+        this.gameFrame = gameFrame;
+    }
 
     /**
      * Makes the mediator listen to the loginButton
