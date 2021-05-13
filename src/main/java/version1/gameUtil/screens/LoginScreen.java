@@ -14,14 +14,11 @@ import java.awt.*;
  */
 public class LoginScreen extends AbstractScreen{
 
-    // The label of the header of the screen
-    private JLabel headerLabel;
-
     // User icon on the Login Page
     private JLabel icon;
 
     // The login button TODO: Replace with customized button from widgets
-    private JButton loginButton;
+    private MazeButton loginButton;
 
     // GoToRegister button TODO: Replace with customized button from widgets
     private JButton goToRegistrationScreenButton;

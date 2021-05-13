@@ -2,7 +2,6 @@ package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
 import version1.gameUtil.listeners.implementations.*;
-import version1.gameUtil.settings.GameMode;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
 
@@ -11,10 +10,10 @@ import java.awt.*;
 
 public class ModeScreen extends AbstractScreen{
 
-    private JButton goToEasyMazeButton;
-    private JButton goToMediumMazeButton;
-    private JButton goToHardMazeButton;
-    private JButton goToModeButton;
+    private MazeButton goToEasyMazeButton;
+    private MazeButton goToMediumMazeButton;
+    private MazeButton goToHardMazeButton;
+    private MazeButton goToModeButton;
 
     public ModeScreen(GameFrame gameFrame){
         this.gameFrame = gameFrame;
