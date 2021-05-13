@@ -1,32 +1,30 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.AuthenticationManager;
 import version1.gameUtil.listeners.implementations.GoToLoginBListener;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.MazeButton;
+import version1.gameUtil.widgets.buttons.MazeRegisterButton;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class RegistrationScreen extends AbstractScreen{
 
-    // The label of the header of the screen
-    private JLabel headerLabel;
-
     // User icon on the Login Page
     private JLabel icon;
 
-    // The login button TODO: Replace with customized button from widgets
-    private JButton registerButton;
+    // The login button
+    private MazeButton registerButton;
 
-    // GoToRegister button TODO: Replace with customized button from widgets
-    private JButton goToLoginScreenButton;
-
+    // GoToRegister button
+    private MazeButton goToLoginScreenButton;
 
     // The username textfield label
     private JLabel userNameInputFieldLabel;
 
-    // Username input text field TODO: Replace with customized textfield from widgets
+    // Username input text field
     private JTextField userNameInputTextfield;
 
     public RegistrationScreen(GameFrame gameFrame){
@@ -122,7 +120,8 @@ public class RegistrationScreen extends AbstractScreen{
     }
 
     public RegistrationScreen createRegisterButton(String registerButtonText) {
-        this.registerButton = new JButton(registerButtonText);
+        // TODO: Refactor this line
+        this.registerButton = new MazeRegisterButton(registerButtonText, new AuthenticationManager(gameFrame));
         return this;
     }
 

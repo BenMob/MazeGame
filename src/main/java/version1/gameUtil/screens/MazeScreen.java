@@ -17,7 +17,7 @@ import java.awt.*;
 public class MazeScreen extends AbstractScreen{
 
     private final MazeMap map;
-    private JButton goToModeButton;
+    private MazeButton goToModeButton;
 
     public MazeScreen(GameFrame gameFrame, GameMode mode){
         this.gameFrame = gameFrame;         // Initialize the gameFrame

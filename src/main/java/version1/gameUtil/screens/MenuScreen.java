@@ -12,9 +12,9 @@ import java.awt.*;
 
 public class MenuScreen extends AbstractScreen{
 
-    private JButton playButton;
-    private JButton leaderBoardButton;
-    private JButton quitButton;
+    private MazeButton playButton;
+    private MazeButton leaderBoardButton;
+    private MazeButton quitButton;
 
     public MenuScreen(GameFrame gameFrame){
         this.gameFrame = gameFrame;
