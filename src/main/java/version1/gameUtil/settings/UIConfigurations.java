@@ -80,7 +80,7 @@ public class UIConfigurations {
                 .createLoginButton(loginButtonLabelText)
                 .createGoToRegistrationScreenButton(gotToRegisterButtonLabelText)
                 .setUserNameInputFieldLabel(inputBoxLabelText)
-                .createUserNameInputFieldMaxLength(MAX_LENGTH)
+                .createUserNameInputField(MAX_LENGTH)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();
     }
