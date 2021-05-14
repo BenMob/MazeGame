@@ -33,7 +33,7 @@ public class LeaderBoardScreen extends AbstractScreen{
         this.leaderOnEasyMode = new FakeUser("Sarai");
         this.leaderOnMediumMode = new FakeUser("Nicole");
         this.leaderOnHardMode = new FakeUser("Cameron");
-        this.leaderOnEasyMode.setScore(GameMode.EASY, 90);
+        this.leaderOnEasyMode.setScore(GameMode.EASY, 25);
         this.leaderOnMediumMode.setScore(GameMode.MEDIUM, 121);
         this.leaderOnHardMode.setScore(GameMode.HARD, 189);
         this.gameFrame = gameFrame;

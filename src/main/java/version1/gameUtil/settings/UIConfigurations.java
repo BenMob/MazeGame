@@ -70,7 +70,7 @@ public class UIConfigurations {
         final Color headerLabelForeground = Color.WHITE;
         final String loginButtonLabelText = "Log In";
         final String gotToRegisterButtonLabelText = "New User";
-        final String inputBoxLabelText = "ENTER USERNAME:";
+        final String inputBoxLabelText = "ENTER NICKNAME:";
         final int MAX_LENGTH = 20;
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
@@ -99,7 +99,7 @@ public class UIConfigurations {
         final Color headerLabelForeground = Color.WHITE;
         final String registerButtonLabelText = "Register";
         final String gotToLoginButtonLabelText = "Back to Login";
-        final String inputBoxLabelText = "ENTER USERNAME:";
+        final String inputBoxLabelText = "CREATE NICKNAME:";
         final int MAX_LENGTH = 20;
         final Color gameFrameBGColor = new Color(80, 0, 100);
 
@@ -172,14 +172,16 @@ public class UIConfigurations {
      */
     public static void configure(MazeScreen mazeScreen){
         final String headerLabelText = "FIND YOUR WAY OUT OF THIS";
-        final String goToMenuText = "Change Mode";
+        final String goToModeText = "New Game";
+        final String goToMenuButtonText = "Back to Menu";
         final Color gameFrameBGColor = new Color(30, 49, 120);
 
         /*
          * Setting values property
          */
         mazeScreen.setLayout(new BorderLayout());
-        mazeScreen.createGoToModeButton(goToMenuText)
+        mazeScreen.createGoToModeButton(goToModeText)
+                .createGoToMenuButton(goToMenuButtonText)
                 .createHeaderLabel(headerLabelText, headerLabelTextFont, headerLabelForeground)
                 .setGameFrameBackgroundColor(gameFrameBGColor)
                 .ready();

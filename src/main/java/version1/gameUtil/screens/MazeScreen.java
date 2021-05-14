@@ -1,6 +1,7 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
+import version1.gameUtil.listeners.implementations.GoToMenuBListener;
 import version1.gameUtil.listeners.implementations.GoToModeBListener;
 import version1.gameUtil.mazegenerator.MazeMap;
 import version1.gameUtil.settings.GameMode;
@@ -18,6 +19,7 @@ public class MazeScreen extends AbstractScreen{
 
     private final MazeMap map;
     private MazeButton goToModeButton;
+    private MazeButton goToMenuButton;
 
     public MazeScreen(GameFrame gameFrame, GameMode mode){
         this.gameFrame = gameFrame;         // Initialize the gameFrame
@@ -64,24 +66,31 @@ public class MazeScreen extends AbstractScreen{
          */
         final ImageIcon backgroundImage = new ImageIcon(UIConfigurations.BACKGROUND);
         final JLabel bodyContainer = new JLabel(backgroundImage);
+        final JPanel footerContainer = new JPanel();
         final Font buttonFont = new Font("Bold", Font.BOLD, 20);
 
         /*
          * Define Layout manager
          */
         bodyContainer.setLayout(new GridBagLayout());
+        footerContainer.setLayout(new GridLayout(1,2));
 
         /*
          * Style buttons
          */
         goToModeButton.setFont(buttonFont);
+        goToMenuButton.setFont(buttonFont);
 
         /*
          * Adding everything on the screen
          */
         bodyContainer.add(this.map);
-        this.add(bodyContainer);
-        this.add(goToModeButton, BorderLayout.SOUTH);
+
+        footerContainer.add(this.goToMenuButton);
+        footerContainer.add(this.goToModeButton);
+
+        this.add(bodyContainer, BorderLayout.CENTER);
+        this.add(footerContainer, BorderLayout.SOUTH);
     }
 
     /**
@@ -94,11 +103,19 @@ public class MazeScreen extends AbstractScreen{
     }
 
     /**
-     * Creates the got to menu game mode button
+     * Creates the got to game mode button
      * @return this
      */
     public MazeScreen createGoToModeButton(String label){
         this.goToModeButton = new MazeButton(label, new GoToModeBListener(gameFrame));
+        return this;
+    }
+
+    /**
+     * Creates the go to Menu button
+     */
+    public MazeScreen createGoToMenuButton(String label){
+        this.goToMenuButton = new MazeButton(label, new GoToMenuBListener(gameFrame));
         return this;
     }
 }
