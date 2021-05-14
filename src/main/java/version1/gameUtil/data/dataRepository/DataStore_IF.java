@@ -25,13 +25,13 @@ public interface DataStore_IF {
      * Queries the currently logged in player
      * @return PlayerRecord
      */
-    PlayerRecord queryPlayerRecord();
+    PlayerRecord QueryPlayerRecord();
 
     /**
      * Queries the  currently logged in player
      * @return RecordList
      */
-    List<PlayerRecord> queryAllPlayersRecordAsList();
+    List<PlayerRecord> QueryRecordsAsList();
 
-    Map<String, PlayerRecord> queryAllPlayerRecordsRecordAsMap();
+    Map<String, PlayerRecord> QueryRecordsAsMap();
 }

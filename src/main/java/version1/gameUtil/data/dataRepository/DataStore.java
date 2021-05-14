@@ -206,7 +206,7 @@ public class DataStore implements DataStore_IF{
      * @return PlayerRecord
      */
     @Override
-    public PlayerRecord queryPlayerRecord() {
+    public PlayerRecord QueryPlayerRecord() {
         return currentPlayerRecord;
     }
 
@@ -216,16 +216,16 @@ public class DataStore implements DataStore_IF{
      * @return RecordList
      */
     @Override
-    public List<PlayerRecord> queryAllPlayersRecordAsList() {
+    public List<PlayerRecord> QueryRecordsAsList() {
         return recordsAsList;
     }
 
     /**
-     *  Questies all the players and restuns them in a Hashmap
+     *  Questies all the players and returns them in a Hashmap
      * @return recordsAsHashMap
      */
     @Override
-    public Map<String, PlayerRecord> queryAllPlayerRecordsRecordAsMap() {
+    public Map<String, PlayerRecord> QueryRecordsAsMap() {
         return recordsAsHashMap;
     }
 }
