@@ -4,7 +4,7 @@
 
 Demostrates the application of the Observer, Mediator, Template Methods and Singleton Design Patterns.
 
-**Team 8**
+### Team 8
 - Cameron Murriel
 - Nicole Perey
 - Sarai Alvarez
