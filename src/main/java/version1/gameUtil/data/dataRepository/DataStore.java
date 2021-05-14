@@ -216,7 +216,7 @@ public class DataStore implements DataStore_IF{
      * @return RecordList
      */
     @Override
-    public List<PlayerRecord> queryAllPlayersRecordAsList() {
+    public List<PlayerRecord> queryRecordsAsList() {
         return recordsAsList;
     }
 
@@ -225,7 +225,7 @@ public class DataStore implements DataStore_IF{
      * @return recordsAsHashMap
      */
     @Override
-    public Map<String, PlayerRecord> queryAllPlayerRecordsRecordAsMap() {
+    public Map<String, PlayerRecord> queryRecordsAsMap() {
         return recordsAsHashMap;
     }
 }
