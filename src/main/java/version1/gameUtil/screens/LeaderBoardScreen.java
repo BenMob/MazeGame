@@ -76,7 +76,7 @@ public class LeaderBoardScreen extends AbstractScreen{
         /*
          * First Things First: Initialize the background
          */
-        final ImageIcon backgroundImage = new ImageIcon("background.png");
+        final ImageIcon backgroundImage = new ImageIcon(UIConfigurations.BACKGROUND);
         final JLabel bodyContainer = new JLabel(backgroundImage);
         final Font titleFont = new Font("Bold", Font.BOLD, 20);
         final Font userNameFont = new Font("Italic", Font.ITALIC, 20);

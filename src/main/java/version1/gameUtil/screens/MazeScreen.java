@@ -62,7 +62,7 @@ public class MazeScreen extends AbstractScreen{
         /*
          * First Things First: Initliaze the
          */
-        final ImageIcon backgroundImage = new ImageIcon("background.png");
+        final ImageIcon backgroundImage = new ImageIcon(UIConfigurations.BACKGROUND);
         final JLabel bodyContainer = new JLabel(backgroundImage);
         final Font buttonFont = new Font("Bold", Font.BOLD, 20);
 

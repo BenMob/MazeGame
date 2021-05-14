@@ -58,7 +58,7 @@ public class ModeScreen extends AbstractScreen{
         /*
          * First Things First: Initliaze the
          */
-        final ImageIcon backgroundImage = new ImageIcon("background.png");
+        final ImageIcon backgroundImage = new ImageIcon(UIConfigurations.BACKGROUND);
         final JLabel bodyContainer = new JLabel(backgroundImage);
         final JPanel modeOptionsContainer = new JPanel();
         final Font buttonFont = new Font("Bold", Font.BOLD, 20);

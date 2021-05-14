@@ -1,8 +1,6 @@
 package version1.gameUtil.screens;
 
 import version1.gameUtil.GameFrame;
-import version1.gameUtil.listeners.implementations.AuthenticationManager;
-import version1.gameUtil.listeners.implementations.GoToMenuBListener;
 import version1.gameUtil.listeners.implementations.GoToRegistrationBListener;
 import version1.gameUtil.settings.UIConfigurations;
 import version1.gameUtil.widgets.buttons.AbstractMazeButton;
