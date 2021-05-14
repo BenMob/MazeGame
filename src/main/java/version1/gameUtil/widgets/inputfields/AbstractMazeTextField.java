@@ -15,4 +15,11 @@ public abstract class AbstractMazeTextField extends JTextField {
     public String readInput(){
         return this.getText();
     }
+
+    /**
+     * Clears the input box
+     */
+    public void clear(){
+        this.setText("");
+    }
 }
