@@ -1,6 +1,8 @@
 package version1.gameUtil.widgets.buttons;
 
 
+import version1.gameUtil.data.dataRepository.DataStore;
+
 /**
  * The registration Button
  */
@@ -14,7 +16,7 @@ public class MazeRegisterButton extends MazeButton{
      * @return boolean
      */
     public boolean handleRegister(String username){
-        return true;
+        return DataStore.getDSInstance().register(username);
     }
 
 }

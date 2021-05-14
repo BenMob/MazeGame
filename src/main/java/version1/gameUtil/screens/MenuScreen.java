@@ -58,8 +58,8 @@ public class MenuScreen extends AbstractScreen{
         /*
          * First Things First: Initliaze the
          */
-        final ImageIcon backgroundImage = new ImageIcon("background.png");
-        final ImageIcon mazeGameLogoImage = new ImageIcon("mazegametitle.png");
+        final ImageIcon backgroundImage = new ImageIcon(UIConfigurations.BACKGROUND);
+        final ImageIcon mazeGameLogoImage = new ImageIcon(UIConfigurations.MAZE_GAME_LOGO);
         final JLabel mazeGameLogo = new JLabel(mazeGameLogoImage);
         final JLabel bodyContainer = new JLabel(backgroundImage);
         final JPanel menuOptionsContainer = new JPanel();

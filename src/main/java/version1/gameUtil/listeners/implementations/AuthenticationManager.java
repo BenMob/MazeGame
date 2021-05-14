@@ -1,24 +1,46 @@
 package version1.gameUtil.listeners.implementations;
 
 
+import version1.gameUtil.GameFrame;
+import version1.gameUtil.screens.LoginScreen;
+import version1.gameUtil.screens.MenuScreen;
 import version1.gameUtil.widgets.buttons.MazeLoginButton;
 import version1.gameUtil.widgets.buttons.MazeRegisterButton;
 import version1.gameUtil.widgets.inputfields.LoginTextField;
 import version1.gameUtil.widgets.inputfields.RegisterTextField;
 
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 
 public class AuthenticationManager extends AuthenticationMediator{
 
+    public AuthenticationManager(GameFrame gameFrame) {
+        super(gameFrame);
+    }
+
     @Override
     public void handleLogin() {
-        System.out.println("Login: Welcome " + readLoginInput());
+        final String USERNAME = readLoginInput();
+        final boolean SUCCESS = ((MazeLoginButton) loginButton).handleLogin(USERNAME);
+        if(SUCCESS){
+            System.out.println("Successfully logged In. Hi " + USERNAME);
+            gameFrame.goTo(new MenuScreen(gameFrame));
+        }else{
+            System.out.println("Failed To Log in with username \"" + USERNAME + "\", please create an account first.");
+        }
     }
 
     @Override
     public void handleRegister() {
-        System.out.println("Register: Welcome " + readRegisterInput());
+        final String USERNAME = readRegisterInput();
+        final boolean SUCCESS = ((MazeRegisterButton) registerButton).handleRegister(USERNAME);
+        if(SUCCESS){
+            registerTextField.clear();
+            System.out.println("Account successfully created. Welcome " + USERNAME);
+        }else{
+            System.out.println("Failed To Register \"" + USERNAME + "\" since the username already exists");
+        }
     }
 
     /**
@@ -29,30 +51,32 @@ public class AuthenticationManager extends AuthenticationMediator{
     @Override
     public void actionPerformed(ActionEvent e) {
 
-
-        // Gets the source of the event | LoginButton, RegisterButton, LoginTextField or RegisterTextField
+        /*
+         *  Gets the source of the event | LoginButton, RegisterButton, LoginTextField or RegisterTextField
+         */
         final Object ACTION_TRIGGERER = e.getSource().getClass();
-
         if(ACTION_TRIGGERER.equals(MazeLoginButton.class)){
-
             handleLogin();
-
         }else if(ACTION_TRIGGERER.equals(MazeRegisterButton.class)){
-
             handleRegister();
-
         }else if(ACTION_TRIGGERER.equals(LoginTextField.class)){
 
+            /*
+             * If the user pressed the enter key and the text box is not empty,
+             * try to log them in
+             */
             if(loginTextField.getText().length() > 0) {
                 handleLogin();
             }
-
         }else if(ACTION_TRIGGERER.equals(RegisterTextField.class)){
 
+            /*
+             * If the user pressed the enter key and the text box is not empty,
+             * try to register them
+             */
             if(registerTextField.getText().length() > 0) {
                 handleRegister();
             }
-
         }
     }
 

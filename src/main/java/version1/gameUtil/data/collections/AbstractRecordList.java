@@ -1,4 +1,4 @@
-package version1.gameUtil.data.models;
+package version1.gameUtil.data.collections;
 
 public abstract class AbstractRecordList {
 

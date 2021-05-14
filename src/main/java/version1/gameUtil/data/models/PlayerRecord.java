@@ -1,4 +1,4 @@
-package version1.gameUtil.data.collections;
+package version1.gameUtil.data.models;
 
 import version1.gameUtil.settings.GameMode;
 
@@ -6,20 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerRecord extends AbstractRecord{
-    private int id;
     private String username;
     private Map<GameMode, Integer> highestScores;
 
-    public PlayerRecord()
-    {
+    public PlayerRecord(String username) {
+        this.username = username;
         this.highestScores = new HashMap<>();
-    }
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.setHighestScore(0, GameMode.EASY);
+        this.setHighestScore(0, GameMode.MEDIUM);
+        this.setHighestScore(0, GameMode.HARD);
     }
 
     public String getUsername() {

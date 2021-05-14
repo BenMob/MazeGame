@@ -14,6 +14,9 @@ import java.awt.*;
  */
 public class UIConfigurations {
 
+    public static final String BACKGROUND = "images/background.png";
+    public static final String AMONGUS = "images/amongus.png";
+    public  static final String MAZE_GAME_LOGO = "images/mazegametitle.png";
     private static final Font headerLabelTextFont = new Font("Bold",Font.BOLD, 30);
     private static final Color headerLabelForeground = Color.WHITE;
 
@@ -62,7 +65,7 @@ public class UIConfigurations {
      * @param loginScreen loginScreen
      */
     public static void configure(LoginScreen loginScreen){
-        final ImageIcon icon = new ImageIcon("amongus.png");
+        final ImageIcon icon = new ImageIcon(UIConfigurations.AMONGUS);
         final String headerLabelText = "MAZE GAME";
         final Color headerLabelForeground = Color.WHITE;
         final String loginButtonLabelText = "Log In";
@@ -91,7 +94,7 @@ public class UIConfigurations {
      * @param registrationScreen loginScreen
      */
     public static void configure(RegistrationScreen registrationScreen){
-        final ImageIcon icon = new ImageIcon("amongus.png");
+        final ImageIcon icon = new ImageIcon(UIConfigurations.AMONGUS);
         final String headerLabelText = "NEW ACCOUNT";
         final Color headerLabelForeground = Color.WHITE;
         final String registerButtonLabelText = "Register";

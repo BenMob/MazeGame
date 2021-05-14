@@ -78,3 +78,6 @@ target/
 # Intellij
 .idea/
 *.iml
+
+# Local Data
+JSON/

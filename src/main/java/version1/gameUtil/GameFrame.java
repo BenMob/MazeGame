@@ -19,7 +19,9 @@ public class GameFrame extends JFrame {
      * Configure default settings on the JFrame
      */
     public GameFrame(){
-        AUTHENTICATION_MANAGER = new AuthenticationManager();
+
+        // Creates an instance of an Authentication manager
+        AUTHENTICATION_MANAGER = new AuthenticationManager(this);
         UIConfigurations.configure(this);
     }
 

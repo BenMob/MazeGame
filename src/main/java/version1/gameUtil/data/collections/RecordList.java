@@ -1,7 +1,6 @@
-package version1.gameUtil.data.models;
+package version1.gameUtil.data.collections;
 
-import version1.gameUtil.data.collections.AbstractRecord;
-import version1.gameUtil.data.collections.PlayerRecord;
+import version1.gameUtil.data.models.AbstractRecord;
 
 import java.util.ArrayList;
 
