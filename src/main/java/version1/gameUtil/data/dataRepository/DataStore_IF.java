@@ -3,6 +3,9 @@ package version1.gameUtil.data.dataRepository;
 import version1.gameUtil.data.models.PlayerRecord;
 import version1.gameUtil.data.collections.RecordList;
 
+import java.util.List;
+import java.util.Map;
+
 public interface DataStore_IF {
     /**
      *  Tries to log the user in
@@ -28,5 +31,7 @@ public interface DataStore_IF {
      * Queries the  currently logged in player
      * @return RecordList
      */
-    RecordList queryAllPlayerRecord();
+    List<PlayerRecord> queryAllPlayersRecordAsList();
+
+    Map<String, PlayerRecord> queryAllPlayerRecordsRecordAsMap();
 }
