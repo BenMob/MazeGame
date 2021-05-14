@@ -9,6 +9,7 @@ import version1.gameUtil.widgets.buttons.MazeRegisterButton;
 import version1.gameUtil.widgets.inputfields.LoginTextField;
 import version1.gameUtil.widgets.inputfields.RegisterTextField;
 
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionEvent;
 
@@ -35,6 +36,7 @@ public class AuthenticationManager extends AuthenticationMediator{
         final String USERNAME = readRegisterInput();
         final boolean SUCCESS = ((MazeRegisterButton) registerButton).handleRegister(USERNAME);
         if(SUCCESS){
+            registerTextField.clear();
             System.out.println("Account successfully created. Welcome " + USERNAME);
         }else{
             System.out.println("Failed To Register \"" + USERNAME + "\" since the username already exists");
